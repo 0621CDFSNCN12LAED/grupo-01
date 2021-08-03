@@ -15,7 +15,6 @@ Productos:
 
 Enfocado a:
     Vendedor: Primero a que la gente que recien empieza tenga una plataforma donde pueda mostrar sus productos/creaciones. Estos productos estaran enfocados a el rango etario que ellos quieran.
-
     Comprador: Cualquier persona que quiera buscar ropa de todo tipo ya sea formal, como urbana, informal, etc. Cada uno va a elegir sus seccion de preferencia y empezar a buscar desde ahí.
     
 Sitios de ejemplos:
