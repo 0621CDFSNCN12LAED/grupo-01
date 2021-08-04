@@ -20,5 +20,6 @@ Comprador: Cualquier persona que quiera buscar ropa de todo tipo ya sea formal, 
 Sitios de ejemplos:
 https://es.squarespace.com/pagina-web-tienda-online?irgwc=1&clickid=WCOyhpXJaxyLTDux9JUkxyowUkBy%3AY3rUy4GTk0 - Por la estructura y por como esta dispuesto todo de distinta forma.
 https://pltfrm.jp/  - Diferente, y producto de insipiración para mis ideas.
-https://closeando.com/
-https://nameagency.co/
+https://dropdead.world.
+https://nameagency.co/.
+https://www.matchesfashion.com/intl/shopping-bag.
