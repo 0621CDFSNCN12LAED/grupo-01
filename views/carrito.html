@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="\css\normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles-buscador.css" />
+  </head>
+  <header class="top-bar">
+    <img src="images/menu.svg" alt="Menu" class="icon-size-menu" />
+    <h3 class="sec-titles">Carrito</h3>
+    <div class="container-relative">
+      <img
+        src="images/carrito.svg"
+        alt="Carrito de compras"
+        class="icon-size-shopping"
+      />
+      <h5 class="quantity-cart">0</h5>
+    </div>
+  </header>
+  <body>
+    <main>
+      <section class="container-opciones flex">
+        <div>Item</div>
+        <div>Color</div>
+        <div>Size</div>
+        <div>Qty</div>
+        <div>Unit Price</div>
+        <div>Total</div>
+      </section>
+      <article class="descripcion">
+        <img src="/images/remera-negra.jpg" alt="" width="35px" />
+        <div>Black</div>
+        <div>L</div>
+        <div>2</div>
+        <div>1000</div>
+        <div>2000</div>
+      </article>
+      <article class="descripcion">
+        <img src="/images/pantalon.jpg" alt="" width="35px" />
+        <div>Beige</div>
+        <div>38</div>
+        <div>1</div>
+        <div>2000</div>
+        <div>2000</div>
+      </article>
+      <section class="container-envio">
+        <h2>Informacion de envio</h2>
+        <input
+          type="number"
+          name="codigo-postal"
+          id="codigo-postal"
+          class="container-envio"
+        />
+        <label for="codigo-postal">C.P.</label>
+        <div>Precio Parcial: 4000</div>
+        <div>Envio: 500</div>
+        <div>Precio Total: 4500</div>
+      </section>
+      <div class="container-promo">
+        Promo Code:
+        <input type="text" name="promo-code" id="promo-code" />
+      </div>
+      <div class="container-checkout">
+        <button type="submit" aria-placeholder="Proceder a Pagar">
+          Proceder a pagar
+        </button>
+      </div>
+    </main>
+    <footer class="gradient-footer">
+      <div class="footer-flex">
+        <div class="contenedor-footer">
+          <img src="images/home.svg" alt="home" class="icon-size-home" />
+          <p class="footer-text">Inicio</p>
+        </div>
+        <div class="contenedor-footer">
+          <img
+            src="images/buscar-lupa.svg"
+            alt="lupa de buscar"
+            class="icon-size-lupa"
+          />
+          <p class="footer-text">Buscar</p>
+        </div>
+        <div class="contenedor-footer">
+          <img
+            src="images/mi-cuenta.svg"
+            alt="logo de perfil"
+            class="icon-size-mi-cuenta"
+          />
+          <p class="footer-text">Mi Perfil</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
