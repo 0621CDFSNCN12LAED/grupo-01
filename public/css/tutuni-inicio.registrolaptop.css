@@ -1,0 +1,277 @@
+@media (min-width : 850px) {
+
+    header {
+        width: 100%;
+    }
+
+.boton-celtab {
+    display: none;
+}
+
+.registrarse-laptop {
+    width: 500px;
+}
+
+.registrarse-laptop h2 {
+    
+    text-align: center;
+    width: auto;
+    
+}
+.registrarse-laptop t {
+    text-align: center;
+}
+.flex-abajo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+.flex-mayor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flex-mayor-re {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.right-navbar t {
+    display: contents;
+}
+.flex-mayor {
+    margin-top: 150px;
+}
+.flex-form {
+    margin-right: 100px;
+    align-items: center;
+}
+.flex-form div{
+    width: 90%;
+}
+.flex-form input {
+    width: 90%;
+}
+.flex-form button {
+    width: 300px;
+}
+header {
+    margin-bottom: -10px;
+}
+
+.mejorar-boton {
+    border : none;
+    border-bottom: black solid 1px;
+    background-color: white;
+}
+
+.negro {
+    color: blue;
+}
+footer {
+    width: 100%;
+    bottom: 0;    
+    position: fixed;
+    
+}
+.fotos {
+    height: 200px;
+    width: 300px;
+    border: black 1px solid;
+    
+}
+
+.flex-mayor {
+    width: 100%;
+}
+
+
+
+.flex-footer {
+    display: flex;  
+}
+
+.flex-form-re {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    margin-top: 40px;
+    justify-content: space-between;
+    
+}
+
+.flex-form-re div {
+    margin-top: 40px;
+    width: 100%;
+    
+}
+.flex-form-re label {
+    font-size: 18px;
+    
+}
+
+.flex-form-re input {
+    border: none;
+    border-bottom: grey 0.5px solid;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 10px ;
+}
+
+.flex-form-re button {
+    display: flex;
+    width: auto;
+    border-radius: 4px;
+    
+}
+
+.flex-form-re button {
+    background-color: black;
+    color: blanchedalmond;
+    font-weight: 300;
+    border: none;
+    height: 30px;
+}
+
+.flex-form-re h6 {
+    margin-top: 5px;
+    font-weight: 400;
+}
+input[type="file"]{
+    border: none;
+}
+
+.registrarse-laptop-re {
+    margin-top: -150px;
+    margin-right: -100px;
+    margin-bottom: 700px;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    
+}
+
+
+}
+
+
+
+
+
+@media (min-width : 1200px) {
+
+.mover-titulo {
+    margin-top: -30px;
+    margin-bottom: 80px ;
+}
+
+.registrarse-laptop-re {
+    margin-bottom: 100px;
+    margin-left: -300px;
+    display: flex;
+    width: 300px;
+    
+    
+}
+
+.registrarse-laptop {
+    width: 500px;
+}
+
+.flex-mayor {
+    margin-top: 65px;
+}
+
+body main {
+    margin-right: 50px;
+}
+
+.flex-form {
+    width: 600px;
+}
+
+
+
+.flex-form-re {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 585px;
+    margin-top: -100px;
+    justify-content: space-between;
+    
+}
+
+
+
+.flex-form-re div {
+    margin-top: 60px;
+    width: 400px;
+}
+
+.flex-form-re input {
+    border: none;
+    border-bottom: grey 0.5px solid;
+    width: 80%;
+    font-size: 20px;
+}
+
+.flex-form-re button {
+    display: flex;
+    width: auto;
+    
+}
+
+.flex-form-re button {
+    
+    background-color: black;
+    color: blanchedalmond;
+    font-weight: 300;
+    border: none;
+    height: 30px;
+}
+
+.flex-form-re h6 {
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.flex-ingresa {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+input[type="file"]{
+    border: none;
+}
+
+.flex-mayor {
+    margin-top: 200px;
+}
+
+}
+
+@media (min-width : 1481px) {
+    .registrarse-laptop {
+        width: 500px;
+        margin-left: -100PX;
+    }
+    body main {
+        margin-right: 150PX;
+    }
+    
+    input[type="file"]{
+        border: none;
+    }
+
+    .registrarse-laptop-re {
+        margin-right: 0px;
+    }
+
+
+}

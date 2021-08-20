@@ -15,3 +15,16 @@ app.get("/", (req, res) => {
 app.get("/carrito", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/carrito.html"));
 });
+
+app.get("/IniciarSesion-Tutuni", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/tutuni-login.html"));
+})
+
+app.get("/Registrarse-Tutuni", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/tutuni-register.html"));
+})
+
+app.get("/Recuperar", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/recuperar.html"));
+})
+

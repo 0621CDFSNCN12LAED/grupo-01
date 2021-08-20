@@ -1,0 +1,276 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*--------------------------------------------*/
+
+header {
+    padding:25px 25px 0 25px;
+}
+header h1 {   
+    font-size: 60px;
+}
+.flex-header-inicio {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.flex-header-inicio i {
+    font-size: 20px;
+    color: grey;
+}
+
+.right-navbar {
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding-bottom: 8px;
+    border-bottom: grey solid 2px;
+}
+
+.right-navbar t {
+    display: none;
+}
+
+header a {
+    outline:none;
+    text-decoration:none;
+}
+
+.flex-titu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+
+/*--------------------------------------------*/
+
+input[type="file"]{
+    border: none;
+}
+
+.sacar-esto  {
+    border:none;
+    background-color: white;
+    color: white;
+}
+
+.sacar-esto #file-upload-button  {
+    border:none;
+    background-color: white;
+    color: white;
+}
+
+
+body main {
+    margin:20px 40px;
+}
+
+
+
+.flex-form {
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.flex-form-re {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    
+    justify-content: space-between;
+    
+}
+
+.flex-form label {
+    display: none;
+}
+
+.flex-form-re label {
+    font-size: 12px;
+}
+
+
+.flex-form div {
+    margin-top: 60px;
+    width: 90%;
+}
+.flex-form-re div {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.flex-form input {
+    border: none;
+    border-bottom: grey 0.5px solid;
+    width: 90%;
+    
+    font-size: 12px;
+}
+.flex-form-re input {
+    border: none;
+    border-bottom: grey 0.5px solid;
+    width: 100%;
+    font-size: 20px;
+}
+.flex-form button {
+    width: 100%;
+}
+
+
+.flex-form button {
+    border-radius: 4px;
+    background-color: black;
+    color: blanchedalmond;
+    font-weight: 300;
+    border: none;
+    height: 25px;
+}
+.flex-form-re button {
+    border-radius: 4px;
+    background-color: black;
+    color: blanchedalmond;
+    font-weight: 300;
+    border: none;
+    height: 30px;
+}
+
+.flex-form h6 {
+    margin-top: 5px;
+    font-weight: 400;
+}
+.flex-form-re h6 {
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.sacar-azul {
+    outline:none;
+    text-decoration:none;
+    color: grey;
+}    
+    
+
+
+.registro-inicio {
+    margin-top: 30px;
+    width: 240px;
+}
+.registro-inicio p {
+    border-bottom: black 1px solid;  
+    font-weight: 800;
+
+}
+
+.registrarse-laptop {
+    margin-top: 30px;
+}
+.mejorar-boton {
+    border : none;
+    border-bottom: black solid 1px;
+    background-color: white;
+}
+
+.negro {
+    color: blue;
+}
+
+.color-icono {
+    color: grey;
+    margin-right: 5px;
+}
+input[type="file"]{
+    border: none;
+}
+
+.registrarse-laptop {
+    display : none
+}
+
+.registrarse-laptop-re {
+    margin-top: 30px;
+}
+
+
+.flex-mayor {
+    margin-top: 100px;
+} 
+
+
+
+
+/*--------------------------------------------*/
+.fotos {
+    display: none;
+}
+
+
+/*--------------------------------------------*/
+
+
+
+
+button {
+    transition: background-color, 0.5;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+
+div button {
+    transition: background-color, 0.5;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+}
+
+button:hover button {
+    background-color: darkblue;
+}
+
+
+
+button  {
+    transition: background-color, 0.5;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+}
+
+h2:hover button {
+    background-color: darkblue;
+}
+
+@keyframes cambio-color {
+    0% { color : black}
+    50% {color : #000093}
+    100% {color: black}
+}
+
+h1 {
+    animation: cambio-color 3s infinite
+}
+
+.cambio-color {
+    transition: all, 0.5;
+    transition-duration: 0.5s;
+    outline:none;
+    text-decoration:none;
+    color: grey;
+}
+.cambio-color:hover i {
+    color: black;
+    
+    text-decoration: black;
+}
