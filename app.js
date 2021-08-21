@@ -20,7 +20,7 @@ app.get("/carrito", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/carrito.html"));
 });
 
-app.get("/IniciarSesion-Tutuni", (req, res) => {
+app.get("/iniciarSesion-Tutuni", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/tutuni-login.html"));
 })
 
