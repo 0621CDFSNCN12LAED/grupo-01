@@ -1,0 +1,184 @@
+<!------ ESTA ES LA PAGINA DEL HOME ------>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuTuni-Home</title>
+    <!------ FONTS QUE USAMOS PARA HOME------>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styles-home.css" />
+</head>
+
+<body>
+    <!------ BARRA DE ARRIBA (BURGER-TUTUNI-CARRITO) ------>
+    <div>
+        <header class="position-top-bar">
+            <div class="top-bar">
+                <img src="images/menu.svg" alt="Menu" class="icon-size-menu">
+                <div class="background-tutuni">
+                    <h3 class="tutuni">TuTuni</h3>
+                </div>
+                <div class="container-relative">
+                    <a href="/carrito">
+                        <img src="images/carrito.svg" alt="Carrito de compras" class="icon-size-shopping">
+                        <p class="quantity-cart">0</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <!------ EL SLIDER DE ARRIBA  ------>
+        <section>
+            <div class="slider-container">
+                <ul class="slider">
+                    <li id="slide1">
+                        <div class="opcion1">
+                            <div class="margin-content-slider">
+                                <p class="novedades">Novedades</p>
+                                <p class="descuento-principal">20% OFF</p>
+                                <p class="nombre-producto-principal">Name of product</p>
+                                <div class="boton-comprar">
+                                    <p class="texto-comprar">Comprar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="slide2">
+                        <div class="opcion2">
+
+                        </div>
+                    </li>
+                    <li id="slide3">
+                        <div class="opcion3">
+
+                        </div>
+                    </li>
+                    <li id="slide4">
+                        <div class="opcion4">
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="prueba-puntitos">
+                    <ul class="puntitos">
+                        <li>
+                            <a href="#slide1">
+                                <div class="circulo"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#slide2">
+                                <div class="circulo"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#slide3">
+                                <div class="circulo"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#slide4">
+                                <div class="circulo"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!------ RECOMENDAD PARA TI - (FALTA HACER SLIDER) ------>
+        <section>
+            <p class="subtitle">Recomendado para ti</p>
+            <div class="flex-section-recomendado">
+                <div class="recomendado-producto-chico">
+                    <div class="flex-corazon">
+                        <div class="background-corazon-chico">
+                            <img src="images/corazon.svg" alt="corazon" class="icon-corazon-chico">
+                        </div>
+                    </div>
+                    <p class="new-oferta-chico">New</p>
+                </div>
+                <div class="recomendado-producto-grande">
+                    <div class="flex-corazon">
+                        <div class="background-corazon">
+                            <img src="images/corazon.svg" alt="corazon" class="icon-corazon">
+                        </div>
+                    </div>
+                    <p class="new-oferta">New</p>
+                </div>
+            </div>
+        </section>
+
+        <!------ CATEGORIAS TIPICAS DE ROPA (AGREGAR LO MISMO PARA HOMBRES)------>
+        <section>
+            <p class="subtitle"> Ropa</p>
+            <div class="ropa">
+                <p class="texto-ropa"> Accesorios </p>
+                <img src="images/accesorios.png" alt="cara" class="chica">
+            </div>
+            <div class="ropa mas-margin">
+                <p class="texto-ropa"> Remeras </p>
+                <img src="images/remeras.png" alt="remera" class="chica">
+            </div>
+            <div class="ropa">
+                <p class="texto-ropa"> Pantalones </p>
+                <img src="images/pantalon.png" alt="pantalon" class="chica">
+            </div>
+            <div class="ropa mas-margin">
+                <p class="texto-ropa"> Zapatillas </p>
+                <img src="images/zapatillas.png" alt="zapatillas" class="chica">
+            </div>
+        </section>
+
+        <!------ CELU CON LOS MÁS VISTO (FALTA HACER SLIDER Y COMO SE VE------>
+        <section>
+            <p class="subtitle-grande">Lo más visto</p>
+            <div class="flex-mas-visto">
+                <img src="images/flechas.svg" alt="flechas" class="flechas derecha">
+                <img src="images/celular.svg" alt="celular" class="celular">
+                <img src="images/flechas.svg" alt="flechas" class="flechas">
+            </div>
+        </section>
+        <div class="espacio-blanco"> </div>
+    </main>
+
+    <!------ BARRA QUE ESTA EN TODAS LA PÁGINAS ------>
+    <footer class="gradient-footer">
+        <div class="footer-flex ">
+            <div class="contenedor-footer">
+                <a href="/">
+                    <img src="images/home.svg" alt="home" class="icon-size-home">
+                    <p class="footer-text">Inicio</p>
+                </a>
+            </div>
+    
+            <div class="contenedor-footer">
+                <a href="/buscar">
+                    <img src="images/buscar-lupa.svg" alt="lupa de buscar" class="icon-size-lupa">
+                    <p class="footer-text">Buscar</p>
+                </a>
+            </div>
+            <div class="contenedor-footer">
+                <img src="images/mi-cuenta.svg" alt="logo de perfil" class="icon-size-mi-cuenta">
+                <p class="footer-text">Mi Perfil</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<!------ MÁS COSAS QUE FALTAN ------>
+<!-- ME GUSTARIA HACER ANIMACIONES CUANDO ESTE TODA LA BASE -->
+<!-- QUE LA SECCION DE ROPA CON UN CLICK CAMBIE DE MUJER A HOMBRE -->
+<!-- SLIDERS PARA HACER A FUTURO CON ALGUNA CLASE DEL PROFE APARTE? -->
+<!-- AGREGAR MAS SECCIONES EN EL HOME COMO ESTABAN EN NUESTRA PRIMERA IDEA -->
