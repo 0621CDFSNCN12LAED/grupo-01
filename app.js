@@ -7,6 +7,8 @@ app.use(express.static(publicPath));
 
 app.listen(3000, () => console.log("Servidor esta corriendo"));
 
+app.set("view engine", "ejs");
+
 // ACA CARGO LA PAGINA DEL BUSCADOR
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/home.html"));
@@ -22,13 +24,12 @@ app.get("/carrito", (req, res) => {
 
 app.get("/iniciarSesion-Tutuni", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/tutuni-login.html"));
-})
+});
 
 app.get("/Registrarse-Tutuni", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/tutuni-register.html"));
-})
+});
 
 app.get("/Recuperar", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/recuperar.html"));
-})
-
+});
