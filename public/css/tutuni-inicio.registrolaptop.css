@@ -82,6 +82,7 @@ footer {
 }
 
 .flex-mayor {
+    margin-top: 300px;
     width: 100%;
 }
 
@@ -144,7 +145,7 @@ input[type="file"]{
 }
 
 .registrarse-laptop-re {
-    margin-top: -150px;
+    margin-top: 0px;
     margin-right: -100px;
     margin-bottom: 700px;
     display: flex;
@@ -169,7 +170,7 @@ input[type="file"]{
 
 .registrarse-laptop-re {
     margin-bottom: 100px;
-    margin-left: -300px;
+    margin-left: 0px;
     display: flex;
     width: 300px;
     
@@ -180,9 +181,7 @@ input[type="file"]{
     width: 500px;
 }
 
-.flex-mayor {
-    margin-top: 65px;
-}
+
 
 body main {
     margin-right: 50px;
@@ -251,7 +250,7 @@ input[type="file"]{
 }
 
 .flex-mayor {
-    margin-top: 200px;
+    margin-top: 300px;
 }
 
 }
