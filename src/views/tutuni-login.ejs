@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/15b3f3326b.js"
       crossorigin="anonymous"
     ></script>
+    <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/tutuni-inicio.registro.css" />
     <link rel="stylesheet" href="/css/tutuni-inicio.registrotablet.css" />
@@ -18,11 +19,17 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-    />
+      />
+      
+    
   </head>
 
   <body>
-    <header>
+    <header><%- include("partials/header") %> </header>
+     
+   
+    <!-- 
+      <header>
       <div class="flex-header-inicio">
         <div><i class="fas fa-arrow-left"></i></div>
         <div class="right-navbar">
@@ -38,7 +45,10 @@
         </div>
       </div>
       <div class="titulo"><h1>TuTuni</h1></div>
-    </header>
+    </header> 
+  -->
+  
+    
 
     <main>
       <div class="flex-mayor">
@@ -76,7 +86,7 @@
           <t>¿Todavia no tenes tu cuenta?</t>
           <h2>
             <button type="submit">
-              <a class="sacar-azul negro" href="/Registrarse-Tutuni"
+              <a class="sacar-azul negro" href="/tutuni-register"
                 >REGISTRATE</a
               >
             </button>
@@ -93,16 +103,8 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div class="flex-footer">
-        <div class="fotos">s</div>
-        <div class="fotos">s</div>
-        <div class="fotos">s</div>
-
-        <div class="fotos laptop">s</div>
-        <div class="fotos laptop">s</div>
-        <div class="fotos laptop">s</div>
-      </div>
-    </footer>
+    <%- include("partials/footer") %>
+     
+    
   </body>
 </html>

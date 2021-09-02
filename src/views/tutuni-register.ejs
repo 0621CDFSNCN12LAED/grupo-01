@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse - Tutuni</title>
+    <%- include("partials/head") %>
     <script src="https://kit.fontawesome.com/15b3f3326b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/tutuni-inicio.registro.css">
@@ -18,7 +19,8 @@
 
 
 <body>
-    <header>
+    <header><%- include("partials/header") %> </header>
+    <!--<header>
         <div class="flex-header-inicio">
             <div><i class="fas fa-arrow-left"></i></div>
             <div class="right-navbar">
@@ -30,7 +32,7 @@
             
         </div>
         <div class="flex-titu"><h1 class="titulo">TuTuni</h1><h2 class="mover-titulo">Registrate</h2></div>
-
+    -->
        
 
     </header>
@@ -83,7 +85,7 @@
 
 <div class="registrarse-laptop-re flex-abajo">
     <t>¿Ya tienes una cuenta?</t>
-    <h2><button class="mejorar-boton" type="submit"><a class="sacar-azul negro" href="/IniciarSesion-Tutuni">INGRESA</a></button></h2>
+    <h2><button class="mejorar-boton" type="submit"><a class="sacar-azul negro" href="/tutuni-login">INGRESA</a></button></h2>
 </div>
 
 </div>
@@ -108,15 +110,6 @@
 </div>
     
 </main>
-<footer>
-    <div class="flex-footer">
-        <div class="fotos">s</div><div class="fotos">s</div>
-        <div class="fotos">s</div>
-
-        <div class="fotos laptop">s</div><div class="fotos laptop">s</div>
-        <div class="fotos laptop">s</div>
-</div>
-    
-</footer>
+<%- include("partials/footer") %>
 </body>
 </html>
