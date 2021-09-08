@@ -10,5 +10,6 @@ router.get("/carrito", mainController.carrito);
 router.get("/recuperar", mainController.recuperar);
 router.get("/tutuni-login", mainController.login);
 router.get("/tutuni-register", mainController.register);
+router.get("/product-detail", mainController.productDetail);
 
 module.exports = router;

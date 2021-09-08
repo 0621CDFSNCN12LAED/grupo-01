@@ -17,4 +17,8 @@ module.exports = {
   register: (req, res) => {
     res.render("tutuni-register");
   },
+  productDetail: (req, res) => {
+    res.render("product-detail");
+  },
+  
 };
