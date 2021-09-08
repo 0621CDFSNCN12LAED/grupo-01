@@ -1,0 +1,589 @@
+:root{
+    --main-color:rgb(140, 240, 140);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 222, 222);
+    --black:#13131a;
+    --bg:#010103;
+}
+
+*{
+    font-family: 'Montserrat';
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+       
+html{
+    font-size: 62.5%;
+    /* Snook trick so rem looks easier to know the amount
+    1rem = 10px  1,4rem = 14px */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--white);
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--bg);
+}
+
+section{
+    padding:2.5rem 0;
+}
+
+.heading{
+    text-align: center;
+    color:var(--white);
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 2.5rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.button{
+    margin-top: 1rem;
+    border-radius: 30px;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+
+
+/* ---------- HEADER -TOP BAR- ---------  */
+
+.header{
+    background: var(--bg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2%;
+    border-bottom: .1rem solid rgba(255, 239, 239, 0.3);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 100;
+}
+
+.header .burguer{
+    width: 4rem;
+    height: 2.5rem;
+}
+    /* LA VERDAD LO TENGO POR TENER, NO HACE NADA */
+
+
+.header .logo img{
+    height: 6rem;
+}
+
+.header .navbar{
+    display: none;
+}
+
+.header .right-icons{
+    color:var(--white);
+    cursor: pointer;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.8rem 0;
+}
+.header .right-icons-tablet{
+    display: none;
+}
+.header .right-icons-mobile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 7rem;
+}
+
+.header a{
+    color:var(--white);
+    /* border: 1px solid white; */
+}
+.header .lupa{
+    width: 2.3rem;
+    height: 2.3rem;
+    margin: 0.5rem 0.2rem 0;
+    /* border: 1px solid white; */
+}
+.header .carrito{
+    width: 2.7rem;
+    height: 2.7rem;
+    margin-top: 0.5rem;
+    /* border: 1px solid white; */
+}
+
+.home{
+    min-height: 70vh;
+    border-radius: 0 0 3rem 3rem;
+    display: flex;
+    align-items: center;
+    background:url(../images/banner-invierno-celu.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home .content{
+    max-width: 60rem;
+    margin-top: 8rem;
+}
+
+.home .content h4{
+    font-size: 7rem;
+    font-weight: 700;
+    color:var(--white);
+}
+
+.home .novedades{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--white);
+}
+.home .product-name{
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.home .button-color{
+    background: var(--black);
+    color:var(--white);
+}
+
+.recomendado .box-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recomendado .box{
+    border-radius: 30px;
+    margin: 0 0.4rem;
+    box-shadow: 0px 0px 1.5rem rgb(255, 255, 255);
+    max-height: 30rem;
+    width: 30%;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.recomendado .image{
+    border-radius: 30px 30px 0 0;
+    height: 18.2rem;
+    overflow:hidden;
+    width: 100%;
+}
+
+.recomendado .image img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.recomendado .heart{
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: .5rem;
+    border:0.1rem var(--white) solid;
+    border-radius: 30px;
+    position: absolute;
+    top:3%;
+    right: 6%;
+}
+
+
+.recomendado .content{
+    padding: 0.5rem;
+}
+
+.recomendado .title{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color:var(--white);
+    height: 1.5rem;
+    overflow: hidden;
+}
+
+.recomendado .diseñador{
+    font-size: .8rem;
+    color: var(--main-color);
+    display: block;
+    height: 1rem;
+    overflow: hidden;
+}
+
+.recomendado .description{
+    font-size: .8rem;
+    color: var(--grey);
+    padding:.5rem 0;
+    height: 3.5rem;
+    overflow: hidden;
+}
+
+.recomendado .button{
+    margin-top: 0.4rem;
+    border-radius: 30px;
+    display: inline-block;
+    padding:.5rem .7rem;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+
+.recomendado .button-color {
+    background-color: var(--white);
+    color: black;
+    font-weight: 500;
+}
+.recomendado .flex-button{
+    display: flex;
+    justify-content: center;
+}
+
+.categorias .container-opciones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categorias .flex-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categorias .container-image{
+    border: 2px solid lightgray;
+    background-color: var(--white);
+    border-radius: 100%;
+    height: 8rem;
+    width: 8rem;
+    margin: 0 2rem;
+}
+
+.categorias .container-image .image{
+    border-radius: 100%;
+    overflow:hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    object-fit: cover;
+}
+
+.categorias .container-opciones a{
+    color: var(--white);
+    font-size: 1.5rem;
+    padding-top: .7rem;
+}
+
+.categorias .todavia-no-se-si-se-puede-hacer{
+    margin-top: 5rem;
+    display:flex;
+    justify-content: space-around;
+}
+
+.categorias .todavia-no-se-si-se-puede-hacer img{
+     width: 40rem;
+    height: 65rem;
+}
+
+.fotos .flex-container{
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+}
+
+.fotos .image{
+    flex:1 1 45rem;
+}
+
+.fotos .image img{
+    width: 100%;
+}
+.fotos .content{
+    flex:1 1 40rem;
+    padding:2rem;
+}
+
+.fotos .content h3{
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.fotos .content h2{
+    font-size: 1.7rem;
+    color: var(--white);
+}
+.fotos .content p{
+    font-size: 1.4rem;
+    color: var(--grey);
+    padding:1rem 0;
+    line-height: 1.5;
+}
+
+.fotos .color{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.fotos .flex-button{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.footer .gradient-footer {
+    position: fixed;
+    width: 100%;
+    height: 12rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.4573179613642332) 36%, rgba(0,0,0,0) 100%);
+}
+
+.footer .footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20%;
+}
+
+.icon-size-home {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.footer .icon-size-lupa {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+}
+
+.footer .icon-size-mi-cuenta {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.footer .footer-text {
+    margin: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+.footer .contenedor-footer {
+    text-align: center;
+    margin-top:6rem;
+}
+
+/* ---------- ANIMACIONES ---------- */
+.animation-down{
+    opacity: 0;
+    animation-name: animation-down;
+    animation-duration: 4s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes animation-down {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  20% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+       transform: translateY(0);
+       opacity: 1;
+  }
+}
+
+
+@media (min-width:768px){
+    section{
+        padding:2rem 3%;
+    }
+
+    .header .navbar{
+        display: flex;
+    }
+
+    .header .navbar a{
+        margin: 0 1rem;
+        font-size: 1.8rem;
+        color:var(--white);
+    }
+
+    .header .navbar a:hover{
+        color:var(--main-color);
+        border-bottom: .1rem solid var(--main-color);
+        padding-bottom: .5rem;
+    }
+
+    .header .right-icons-tablet{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 16rem;
+    }
+    .header .right-icons{
+        width: 25.2rem;
+    }
+
+    .home{
+        min-height: 100vh;
+        border-radius: 0;
+        background:url(../images/banner-invierno-desktop.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        justify-content: flex-start;
+        text-align:start
+    }
+
+
+    .home .content h4{
+        font-size: 12rem;
+    }
+
+    .home .novedades{
+        font-size: 4rem;
+    }
+    .home .product-name{
+        font-size: 5rem;
+    }
+
+    .heading{
+        font-size: 4rem;
+    }
+    
+    .recomendado .box:hover .image img{
+        transform: scale(1.1);
+    }
+    .recomendado .box:hover .heart{
+        transform: scale(1.1);
+        z-index: 1;
+    }
+    .recomendado .heart:hover{
+        color: red;
+        border: 0.3rem red solid;
+    }
+
+    .recomendado .box{
+        margin: 0 2rem;
+        box-shadow: 0px 0px 2.5rem var(--white);
+        max-height: 50rem;  
+    }
+
+    .recomendado .image{
+        height: 30rem;
+    }
+
+    .recomendado .heart{
+        font-size: 2.5rem;
+        border:0.3rem solid var(--white);
+        top:2%;
+        right: 4%;
+    }
+
+
+    .recomendado .content{
+        padding: 1rem;
+    }
+
+    .recomendado .title{
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 1.5;
+        height: 3rem;
+    }
+
+    .recomendado .diseñador{
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+
+    .recomendado .description{
+        font-size: 1.4rem;
+        height: 5.8rem;
+    }
+
+    .recomendado .button{
+        margin-top: 1rem;
+        padding:.7rem 2rem;
+        font-size: 1.5rem;
+    }
+    
+    .categorias .flex-option:hover a{
+        color: yellow;
+    }
+    
+    .fotos .content h3{
+        font-size: 2.5rem;
+    }
+
+    .fotos .content h2{
+        font-size: 2rem;
+    }
+    .fotos .content p{
+        font-size: 1.5rem;;
+        line-height: 1.8;
+    }
+
+    .footer {
+        display:none;
+    }
+}
+
+@media (min-width:1000px){
+     html{
+        font-size: 75%;
+    }
+
+    .recomendado .box{
+        max-height: 55rem;  
+    }
+
+    .recomendado .image{
+        height: 35rem;
+    }
+}

@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesion - Tutuni</title>
     <script src="https://kit.fontawesome.com/15b3f3326b.js" crossorigin="anonymous"></script>
+    <%- include("partials/head") %>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/tutuni-inicio.registro.css">
-    <link rel="stylesheet" href="/css/tutuni-inicio.registrotablet.css">
-    <link rel="stylesheet" href="/css/tutuni-inicio.registrolaptop.css">
+    
     <link rel="stylesheet" href="/css/recupero.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,8 @@
 
 
 <body>
-    <header>
+    <header><%- include("partials/header") %> </header>
+    <!--<header>
         <div class="flex-header-inicio">
             <div><i class="fas fa-arrow-left"></i></div>
             <div class="right-navbar">
@@ -31,14 +32,14 @@
             
         </div>
         <div class="titulo"><h1>TuTuni</h1></div>
-    </header>
+    </header> -->
     <main>
 
 <div class="flex-contenedor">
     
         <div><h3>RECUPERAR CONTRASEÑA</h3></div>
         <div><t>No te preocupes, recuperar la contraseña es bastante sencillo, basta con ingresar tu direccion 
-            de correo electronico usado para la cuenta y te enviaremos las instruccion</t></div>
+            de correo electronico usado para la cuenta y te enviaremos las instrucciones</t></div>
         <div><input type="text" name="email" id="email" placeholder="E-mail"></div>
         <div><button type="submit">Enviar</button></div>
         
@@ -49,6 +50,7 @@
 
 
     </main>
+    <%- include("partials/footer") %>
 
 </body>
 </html>

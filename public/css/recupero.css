@@ -12,7 +12,7 @@ main {
 
 .flex-contenedor {
     margin-top: 70px;
-    height: 800px;
+    height: 0px;
     width: 100%;
     padding: 15px;
     display: flex;
@@ -40,9 +40,13 @@ main {
     text-align: center;
 }
 
+.flex-contenedor {
+    margin-top: 200px;
+}
+
 @media (min-width:765px){
     .flex-contenedor {
-        margin-top: 100px;
+        margin-top: 200px;
         width: 765px;
     }
 }

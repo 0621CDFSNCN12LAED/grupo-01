@@ -1,21 +1,21 @@
 module.exports = {
   home: (req, res) => {
-    res.render("home");
+    res.render("home", { title: "Home" });
   },
   buscar: (req, res) => {
-    res.render("buscar");
+    res.render("buscar", { title: "Buscador" });
   },
   carrito: (req, res) => {
-    res.render("carrito");
+    res.render("carrito", { title: "Carrito de Compras" });
   },
   recuperar: (req, res) => {
-    res.render("recuperar");
+    res.render("recuperar", { title: "Recuperar" });
   },
   login: (req, res) => {
-    res.render("tutuni-login");
+    res.render("tutuni-login", { title: "Login" });
   },
   register: (req, res) => {
-    res.render("tutuni-register");
+    res.render("tutuni-register", { title: "Register" });
   },
   productDetail: (req, res) => {
     res.render("product-detail");
