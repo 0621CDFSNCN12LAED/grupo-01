@@ -1,0 +1,80 @@
+/* CARRITO DE COMPRAS */
+.container-opciones {
+  background-color: black;
+  color: #c4c4c4;
+  font-size: 13px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.container-envio {
+  background-color: black;
+  color: #c4c4c4;
+  font-size: 50%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.container-envio h2 {
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+.container-envio input {
+  background-color: black;
+  color: #c4c4c4;
+  text-align: left;
+}
+.container-checkout {
+  margin-top: 15px;
+  float: right;
+  display: inline-block;
+  padding: 10px;
+  background-color: black;
+  color: #c4c4c4;
+  font-size: 50%;
+}
+.container-promo {
+  margin-top: 35px;
+  display: inline-block;
+  padding: 10px;
+  background-color: black;
+  color: #c4c4c4;
+  font-size: 50%;
+}
+
+.descripcion {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.flex-colum {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-footer {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.body-carrito {
+  margin: 55px 35px 0;
+}
+.text-carrito {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.white {
+  background-color: white;
+}

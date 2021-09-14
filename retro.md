@@ -10,3 +10,9 @@ Terminamos de definir colores, letras y estructura.
 Tenemos charlas fluidas por whatsapp y nos ayudamos mutuamente.
 No pudimos organizar tantas juntadas por discord esta vez.
 Debemos dejar de entregar las cosas a ultimo momento.
+
+TERCER SPRINT:
+El tercer sprint se trabajo con uno de nosotros compartiendo pantalla y en conjunto nos ocupamos de atomizar el codigo y agregar los partials.
+Seguimos teniendo buena comunicacion via whatsapp y nos ayudamos con las dudas que salgan.
+No llegamos a completar todos los puntos del sprint, y ya nos estamos ocupando para entregarlo con el sprint cuatro.
+Otra vez dejamos todo para ultimo momento, pero ya hablamos al respecto y vamos a intentar entregarlo antes.
