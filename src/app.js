@@ -11,9 +11,11 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
 const indexRouter = require("./routes/index");
+const productsRouter = require('./routes/products'); 
 
 app.use("/", indexRouter);
 app.use(express.static(path.join(__dirname, "../public")));
+app.use("/products",productsRouter)
 
 module.export = app;
 
