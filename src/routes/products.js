@@ -23,7 +23,7 @@ router.get("/create", productsController.create); //Showform
 router.post("/", upload.single("image"), productsController.store); //crearProducto
 
 //3. /products/:id (GET) Mostrar Detalle de un producto particular
-router.get("/:id/", productsController.detail);
+router.get("/:id", productsController.detail);
 
 //5. /products/:id/edit (GET) Mostrar Formulario de edición de productos
 router.get("/:id/edit", productsController.edit);
