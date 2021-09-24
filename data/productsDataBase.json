@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Pantalon Ay not dead",
+    "price": 7500,
+    "discount": 5,
+    "category": "Pantalones",
+    "Talle": "38",
+    "Envio": true,
+    "image": "pantalon-aynot.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Remera Anime Given",
+    "price": 2000,
+    "discount": 10,
+    "category": "Remeras",
+    "Talle": "M ",
+    "Envio": false,
+    "image": "Remera-Given.jfif"
+  },
+  {
+    "id": 3,
+    "name": "Gorra Boston Celtics",
+    "price": 1500,
+    "discount": 0,
+    "category": "Gorras",
+    "Talle": "S",
+    "Envio": true,
+    "image": "gorra-celtics.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Vestido Versacce",
+    "price": 15000,
+    "discount": 10,
+    "category": "Vestidos",
+    "Talle": "S",
+    "Envio": true,
+    "image": "vesstido-versacce.jpg"
+  }
+]
