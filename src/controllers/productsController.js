@@ -9,7 +9,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
   //
   index: (req, res) => {
-    res.render("/products", { products });
+    res.render("products", { products });
   },
 
   // Detail - Detail from one product
