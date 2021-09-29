@@ -1,0 +1,177 @@
+:root{
+    --main-color:rgb(140, 240, 140);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 222, 222);
+    --black:#13131a;
+    --bg:#010103;
+}
+
+*{
+    font-family: 'Montserrat';
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: .2s linear;
+}
+       
+html{
+    font-size: 62.5%;
+    /* Snook trick so rem looks easier to know the amount
+    1rem = 10px  1,4rem = 14px */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+.background{
+    background:url(../images/fondo-verde-mobile.jpg) no-repeat;
+    background-size: cover;
+}
+
+.below-head-bar{
+    margin: 9.5rem 0 13rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+.search-side-bar{
+    display: none;
+}
+.container-products{
+    background-color: rgb(224, 210, 210);
+    border-radius: 1.5rem;
+    width: 90%;
+}
+
+.sec-titles {
+    font-weight: 500;
+    font-size: 3.5rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.all-products{
+    padding: 1rem;
+}
+
+.container {
+    background-color:white;
+    width: 100%;
+    height: 14rem;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+/* -------------------- */
+.articulo .product-image {
+    /* border: 1px solid black; */
+    width: 13.5rem;
+    height: 12rem;
+    border-radius: 1.5rem;
+    margin-left: 1rem;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.articulo .product-image img{
+    border-radius: 1.5rem;
+}
+.articulo .product-properties {
+    height: 10.5rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 1rem;
+}
+
+.articulo .product-title{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.articulo .product-price{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.articulo .tachado{
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 1rem;
+    color:rgb(182, 181, 181)
+}
+
+.same-line{
+    display: flex;
+    align-items: center;
+}
+
+.articulo .product-price-discount{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.articulo .discount{
+    font-size: 1.5rem;
+    color: rgb(18, 145, 52);
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
+.articulo .envio {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: rgb(18, 145, 52);
+    padding-bottom: 0.15rem;
+    width: 7rem;
+    text-align: center;
+}
+
+@media (min-width:768px){
+    html{
+        font-size: 75%;
+    }
+}
+
+@media (min-width:1164px){
+    .flex{
+        margin: 1rem;
+    }
+    .search-side-bar{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 28rem;
+        margin-right: 2rem;
+        background-color: rgb(224, 210, 210);
+        border-radius: 1.5rem;
+    }
+
+    .container-products{
+        width: 74.7rem;
+    }
+
+    .form-container{
+        background-color: var(--white);
+        border-radius: 1.5rem;
+        width: 95%;
+        height: 95%;
+
+    }
+}

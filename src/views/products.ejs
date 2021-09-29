@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--El head-->
+    <%- include ("partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/products.css">
+    </head>
+    <!--El head-->
+    
+    <body class="background">   
+        <!--El header--> 
+        <%- include ("partials/header.ejs") %>
+        <!--El header--> 
+        <main class="below-head-bar">
+            <div class="flex">
+                <div class="search-side-bar">
+                    <form class="form-container">
+        
+                    </form>
+                </div>
+                <div class="container-products">
+                    <h3 class="sec-titles">Categoria</h3>
+                    <div class="all-products">
+                        <article class="container articulo">
+                            <div class= "product-image"> 
+                                <img src="/images/recomendado-1.jpeg" width="100%" />
+                            </div>
+                            <div class= "product-properties">
+                                <p class="product-title">Nombre del producto</p>
+                                <!-- if product.discount > 0 entonces  -->
+                                <div>
+                                    <p class="product-price tachado">$0.00</p>
+                                    <div class="same-line">
+                                        <p class="product-price-discount">$0.00</p>
+                                        <p class="discount">10% OFF</p>
+                                    </div>
+                                </div>
+                                <!-- else
+                                <p class="product-price">$0.00</p> -->
+                                <p class="envio">Envio gratis</p>
+                            </div>
+                        </article>
+                        <article class="container articulo">
+                            <div class= "product-image"> </div>
+                            <div class= "product-properties">
+                                <p class="product-title">Nombre del producto</p>
+                                <p class="product-price">$0.00</p>
+                                <p class="envio">Envio gratis</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="next-page">
+                <ul class="next-page-container"></ul>
+        
+            </div> -->
+        </main>
+    </body>
+</html>
