@@ -172,6 +172,10 @@ html{
         border-radius: 1.5rem;
         width: 95%;
         height: 95%;
-
+    }
+    
+    .background{
+        background:url(../images/fondo-verde-desktop.jpg) no-repeat;
+        background-position: center;
     }
 }
