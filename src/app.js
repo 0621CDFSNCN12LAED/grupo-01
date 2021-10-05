@@ -12,7 +12,7 @@ app.use(express.json());
 const publicPath = path.resolve(__dirname, "../public");
 app.use(express.static(publicPath));
 
-const metohdOverride = require("method-override");
+const methodOverride = require("method-override");
 
 app.listen(3000, () => console.log("Servidor esta corriendo"));
 
@@ -22,7 +22,7 @@ app.set("views", path.join(__dirname, "./views"));
 const indexRouter = require("./routes/index");
 const productsRouter = require('./routes/products'); 
 
-app.use(metohdOverride("_method"));
+app.use(methodOverride("_method"));
 app.use("/", indexRouter);
 app.use(express.static(path.join(__dirname, "../public")));
 app.use("/products",productsRouter)
