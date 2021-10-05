@@ -35,10 +35,10 @@
         <main>
           <section>
     <div class="article-detail-main">
-                <div><h3 class="product-title">SHORT JOGGING DE POLAR</h3></div>
-                <div><img src="/images/short-negro-jogger.JPG" alt="imagen short" width="100%" class="product-image"></div>
+                <div><h3 class="product-title"> <%= elegido.name %> </h3></div>
+                <div><img src="/../images/productos/<%= elegido.image %>" alt="imagen" width="100%" class="product-image"></div>
             <div class="price">
-                <i class="fas fa-dollar-sign"></i> 500 ARS</div>
+                <i class="fas fa-dollar-sign"></i> $<%= elegido.price - (elegido.price * (elegido.discount/100)) %> ARS</div>
             <div class="size-container">
                 <div class="size-circle">XS</div>
                 <div class="size-circle">S</div>
@@ -80,9 +80,15 @@
                 <a href=""><button class="addtocart-button">Añadir al carrito</button></a>
             </div>
             <a href=""class="item-margin-saveforlater"><div class="saveforlater"><i class="far fa-heart"></i> Guardar en Favoritos</div></a>
-                
-        
-    </div>  
+
+            
+                </div> 
+                 <form action="/products/delete/<%= elegido.id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                    Borrar producto
+                </button>
+                </form>
+                <a href="/products/edit/<%= elegido.id %>">Editar este producto</a>
 </section>
 </main>
     </div>

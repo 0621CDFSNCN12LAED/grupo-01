@@ -10,10 +10,11 @@
     <!--</body>-->
     <main class="below-head-bar">
         <!--<form action="/products" method="POST" enctype="multipart/form-data" class="desktop-m"> -->
-            <form action="/products/create" enctype="multipart/form-data" method="POST" class="desktop-m">
+            <form action="/products/edit/<%= elegido.id %>?_method=PUT" enctype="multipart/form-data" method="POST" class="desktop-m">
             <div class="title">
                 <label for="name" class=""></label>
                 <input
+                    value="<%= elegido.name %>"
                     class="letter-title"
                     type="text"
                     id="name"
@@ -52,14 +53,13 @@
                     enseñaron a que, al cliquear algo 'x' se puede importar una imagen lo saco
                     para que la vista se vea linda -->
                     
-                    <!-- Lo descomente para poder probar -->
-                 <input
+                    <input
                     class="form-input"
                     type="file"
                     id="image"
                     name="image"
                     accept="image/jpeg,image/png"
-                 >      
+                 >        
             </div>
             <div class="blocks-margin">
                 <article class="container">
@@ -69,7 +69,7 @@
                             <label for="category" class="create-letter">Categoria</label>
                             <div class="same-line">
                                 <select name="category" id="category" class="user-answer-select">
-                                    <option value="" disabled selected>Elegí</option>
+                                    <option value="" disabled selected><%= elegido.category %></option>                                    
                                     <option value="remera">Remera</option>
                                     <option value="pantalon">Pantalon</option>
                                     <option value="abrigo">Abrigo</option>
@@ -88,6 +88,7 @@
                             <label for="stock" class="create-letter">Stock</label>
                             <div class="same-line">
                                 <input
+                                value="<%= elegido.stock %>"
                                     class="user-answer"
                                     type="number"
                                     id="stock"
@@ -107,12 +108,14 @@
                             <label for="talles" class="create-letter">Talles</label>
                             <div class="same-line">
                                 <select name="talles" id="talles" class="user-answer-select">
-                                    <option value="" disabled selected>Elegí talle</option>
+                                    <option value="" disabled selected><%= elegido.Talle %></option>
                                     <option value="xsmall">XS</option>
                                     <option value="small">S</option>
                                     <option value="medium">M</option>
                                     <option value="large">L</option>
                                     <option value="xlarge">XL</option>
+                                    
+                                   
                                 </select>
                             </div>
                         </div>
@@ -126,6 +129,7 @@
                             <div class="same-line">
                                 <p class="block-letter-extras2">$</p>
                                 <input
+                                value="<%= elegido.price %>"
                                     class="user-answer"
                                     type="number"
                                     id="price"
@@ -144,6 +148,7 @@
                                 <label for="discount" class="create-letter">Descuento</label>
                                 <div class="same-line">
                                     <input
+                                    value="<%= elegido.discount %>"
                                         class="user-answer"
                                         type="text"
                                         id="discount"
@@ -163,9 +168,8 @@
                             <label for="envio-gratis" class="create-letter">Envio Gratis</label>
                             <div class="same-line">
                                 <select name="enviogratis" id="envio-gratis" class="user-answer-select">
-                                    <option value="" disabled selected>???</option>
-                                    <!-- <option value="si">Si</option>
-                                    <option value="no">No</option> -->
+                                    
+                                    <option value="" disabled selected> <%= elegido.Envio %> </option>                    
                                     <option value="Envio gratis">Envio gratis</option>
                                     <option value="Envio a cobrar">Envio a cobrar</option>
                                 </select>
@@ -230,9 +234,11 @@
                     <button type="submit" class="button">
                         Guardar
                     </button>
-                    <button type="reset" class="button">
-                        Borrar
+                    
+                    <button type="submit" class="button">
+                        Borrar producto
                     </button>
+                    
                 </div>
             </div>
     

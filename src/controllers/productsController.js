@@ -1,52 +1,110 @@
 const fs = require("fs");
 const path = require("path");
+const multer = require("multer");
+const { monitorEventLoopDelay } = require("perf_hooks");
 
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+
+//const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+//const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+//ejemplo mati: 
+const productsjson = fs.readFileSync(path.join(__dirname, "../data/productsDataBase.json"));
+const products = JSON.parse(productsjson);
+
+function writeJson() {
+  let data = JSON.stringify(products, null, 4)
+  fs.writeFileSync(path.join(__dirname, "../data/productsDataBase.json"), data)
+  return
+}
 
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-  //
+  
   index: (req, res) => {
     res.render("products", { products });
   },
 
-  // Detail - Detail from one product
   detail: (req, res) => {
-    const product = products.find((prod) => {
-      return prod.id == req.param.id;
-    });
-    if (products) {
-      res.render("detail", { products });
+    let productEncontrado = products.find(function(product) {
+      return product.id == req.params.id;
+    })
+    if (productEncontrado) {
+res.render("product-detail", { elegido : productEncontrado });
     } else {
-      res.send("Error");
+      res.send("error")
     }
+    
   },
 
-  // Create - Mostrar form create
   create: (req, res) => {
     res.render("createProduct");
   },
+  // create: (req, res) => {
+  //   res.render("eJEMPLOFORM");
+  // },
 
-  // Create -  Method to store
+  
   store: (req, res) => {
-    // Do the magic
+  // console.log(req.body)
+    let newProduct = {
+      
+      id: products.length + 1, 
+      name: req.body.name,
+      //name: "prueba",
+      image: req.file.filename,
+      category: req.body.category,
+      stock: Number(req.body.stock),
+      talles: req.body.talles,
+      price: Number(req.body.price),
+      discount: Number(req.body.discount),
+      enviogratis: req.body.enviogratis,
+      description: req.body.description
+    }
+    products.push(newProduct);
+    writeJson()
+    res.redirect("/products")
+
   },
 
-  // Update - Form to edit
+  // Update 
   edit: (req, res) => {
-    res.render("editProduct");
+
+    let productEncontrado = products.find(function(product) {
+      return product.id == req.params.id;
+    })
+
+    res.render("editProduct", { elegido : productEncontrado } );
   },
-  // Update - Method to update
+ 
   update: (req, res) => {
-    // Do the magic
+    let productEncontrado = products.find(function(product) {
+      return product.id == req.params.id
+    })
+      productEncontrado.name = req.body.name,
+      productEncontrado.image = req.file ? req.file.filename : productEncontrado.image,
+      productEncontrado.category = req.body.category,
+      productEncontrado.stock = Number(req.body.stock),
+      productEncontrado.talles = req.body.talles,
+      productEncontrado.price = Number(req.body.price),
+      productEncontrado.discount = Number(req.body.discount),
+      productEncontrado.enviogratis = req.body.enviogratis,
+      productEncontrado.description = req.body.description
+      
+      writeJson()
+      res.redirect("/products")
+    
   },
 
-  // Delete - Delete one product from DB
   destroy: (req, res) => {
-    // Do the magic
-  },
+    let productIndex = products.findIndex(function(product) {
+      return product.id == req.params.id
+  })
+      products.splice(productIndex, 1)
+      writeJson()
+      res.redirect("/products")
+
+  }
 };
 
 module.exports = controller;
