@@ -1,10 +1,17 @@
-
-
-
 const express = require("express");
+const session = require('express-session');
 const path = require("path");
+
 const app = express();
 app.use(express.json());
+
+app.use(session({
+    secret: "Mensaje Secreto",
+    resave: false,
+	saveUninitialized: false,
+}));
+
+app.use(cookies());
 
 // const bodyParser = require('body-parser');
 // app.use(bodyParser.json());
