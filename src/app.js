@@ -26,9 +26,11 @@ app.set("views", path.join(__dirname, "./views"));
 // Rutas
 const indexRouter = require("./routes/index");
 const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/usersRoutes')
 
 app.use("/", indexRouter);
-app.use("/products",productsRouter)
+app.use("/products",productsRouter);
+app.use("/users", usersRouter);
 
 // Cargando el servidor
 app.listen(3000, () => console.log("Servidor esta corriendo"));
