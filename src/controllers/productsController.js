@@ -64,7 +64,6 @@ res.render("product-detail", { elegido : productEncontrado });
     products.push(newProduct);
     writeJson()
     res.redirect("/products")
-
   },
 
   // Update 

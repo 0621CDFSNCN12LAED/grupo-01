@@ -25,4 +25,48 @@ const appService = {
         });
         return oneProduct;
     },
-}
+
+    findByCategory(category){
+        return this.findAll().filter((product) => {
+            return product.category == category;
+        })
+    },
+
+    createProduct(reqbody, image){
+        const lastProduct = products[products.length - 1];
+        const biggestProductId = products.length > 0 ? lastProduct.id : 1;
+        const product = {
+            ...reqbody,
+            image: image ? image.filename : "default-image.png",
+            id: biggestProductId + 1,
+            stock: Number(reqbody.stock),
+            price: Number(reqbody.price),
+            discount: Number(reqbody.discount),
+            deleted: false,
+        }
+        products.push(product);
+        this.writeJson();
+    },
+
+    editOne(id, reqbody, image){
+        const product = this.findById(id);
+        product.name = reqbody.name;
+        product.image = image ? image.filename : product.image;
+        product.category = reqbody.category;
+        product.stock = Number(reqbody.stock);
+        product.talle = reqbody.talle;
+        product.price = Number(reqbody.price);
+        product.discount = Number(reqbody.discount);
+        product.enviogratis = reqbody.enviogratis;
+        product.description = reqbody.description;
+        this.writeJson();
+    },
+
+    deleteProduct(id){
+        const product = this.findOneById(id);
+        product.deleted = true;
+        this.writeJson();
+    }
+};
+
+module.exports = appService;
