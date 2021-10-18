@@ -5,7 +5,7 @@ const path = require("path");
 // Controlador
 const usersController = require('../controllers/userController');
 // Middlewares (todavia no se estan usando)
-const configMulter = require("../middlewares/productMulter")
+const configMulter = require("../middlewares/productMulter");
 
 // Registro
 router.get('/register', usersController.register);

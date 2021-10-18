@@ -4,6 +4,7 @@ const path = require("path");
 
 
 const configMulter = require("../middlewares/productMulter")
+
 const productsController = require("../controllers/productsController");
 
 
@@ -16,8 +17,7 @@ router.get("/detail/:id", productsController.detail);
 
 
 router.get("/create", productsController.create); //Showform
-router.post("/create", configMulter.single("image"), productsController.store)
-//router.post("/", upload.single("image"), productsController.store); //crearProducto
+router.post("/create", configMulter.single("image"), productsController.store);
 
 
 router.get("/edit/:id", productsController.edit);

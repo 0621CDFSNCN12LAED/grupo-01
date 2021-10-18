@@ -3,13 +3,13 @@ const path = require("path");
 const fs = require("fs");
 
 // Combirtiendo el Json a objeto de Js
-const productsjson = fs.readFileSync(path.join(__dirname, "../data/productsDataBase.json"));
-const products = JSON.parse(productsjson);
+const productsDataPath = path.join(__dirname, "../data/productsDataBase.json");
+const products = JSON.parse(fs.readFileSync(productsDataPath, "utf-8"));
 
 const appService = {
     writeJson() {
         const jsonString = JSON.stringify(products, null, 4);
-        fs.writeFileSync(productsjson, jsonString);
+        fs.writeFileSync(productsDataPath, jsonString);
       },
 
     findAll(){
@@ -63,7 +63,7 @@ const appService = {
     },
 
     deleteProduct(id){
-        const product = this.findOneById(id);
+        const product = this.findById(id);
         product.deleted = true;
         this.writeJson();
     }

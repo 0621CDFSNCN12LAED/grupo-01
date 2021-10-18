@@ -8,7 +8,8 @@
         "Talle": "XS",
         "Envio": "Envio gratis",
         "image": "pantalon-aynot.jpg",
-        "stock": 2
+        "stock": 2,
+        "deleted": false
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "Talle": "M",
         "Envio": "Envio a cobrar",
         "image": "Remera-Given.jfif",
-        "stock": 2
+        "stock": 2,
+        "deleted": false
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "Envio": "Envio gratis",
         "image": "gorra-celtics.jpg",
         "stock": 2,
-        "description": ""
+        "description": "",
+        "deleted": false
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
         "Talle": "S",
         "Envio": "Envio gratis",
         "image": "vestido-versacce.jpeg",
-        "stock": 3
+        "stock": 3,
+        "deleted": false
     },
     {
         "id": 5,
@@ -50,7 +54,8 @@
         "stock": 1,
         "price": 25000000,
         "discount": 10,
-        "description": ""
+        "description": "",
+        "deleted": false
     },
     {
         "id": 6,
@@ -62,6 +67,20 @@
         "price": 2500,
         "discount": 12,
         "enviogratis": "Envio gratis",
-        "description": "Sombrero mexicano de mariachi."
+        "description": "Sombrero mexicano de mariachi.",
+        "deleted": false
+    },
+    {
+        "name": "Remera Negra",
+        "category": "remera",
+        "stock": 5,
+        "talles": "medium",
+        "price": 2500,
+        "discount": 10,
+        "enviogratis": "Envio gratis",
+        "description": "Esta es una remera Negra 2.0",
+        "image": "image-1634588336912.jpg",
+        "id": 7,
+        "deleted": true
     }
 ]
