@@ -69,4 +69,7 @@ const appService = {
     }
 };
 
+//Comentario: Cambie el Delete teniendo en cuenta lo que vimos en la base de datos.
+// Ahora tenemos un campo el cual se encarga de ver si el producto esta vigente o fue borrado. 
+
 module.exports = appService;
