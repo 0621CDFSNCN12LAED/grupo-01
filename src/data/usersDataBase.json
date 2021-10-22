@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "ProbandoMati",
+        "username": "Mati",
+        "avatar": "pantalon-aynot.jpg",
+        "birthdate": "1998-23-10",
+        "adress": "Pepito 123",
+        "password": "blablabla",
+        "confirmPassword": "blablabla",
+        "admin": 1,
+        "deleted": false
+    }
+]

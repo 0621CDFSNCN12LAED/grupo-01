@@ -7,10 +7,10 @@ const multer = require("multer");
 
 const controller = {
     register: (req, res) => {
-		return res.render('tutuni-inicio.registro');
+		res.render("tutuni-register");
 	},
     processRegister: (req, res) => {
-
+        
     },
     login: (req, res) => {
 		return res.render('futura pagina de login');
