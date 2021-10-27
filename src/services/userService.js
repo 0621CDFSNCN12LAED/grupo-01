@@ -1,8 +1,10 @@
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
+const path = require("path");
 
-const usersPath = path.join(__dirname, "../data/productsDataBase.json");
+const usersPath = path.join(__dirname, "../data/usersDataBase.json");
 const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
+
 
 const userService = {
     writeJson() {
@@ -32,6 +34,7 @@ const userService = {
           id: biggestUserId + 1,
           admin: 0,
           password: bcryptjs.hashSync(reqbody.password, 10),
+          confirmPassword: bcryptjs.hashSync(reqbody.password, 10),
           avatar: avatar ? avatar.filename: "agregar-imagen-default-de-avatar"
         };
         users.push(newUser);

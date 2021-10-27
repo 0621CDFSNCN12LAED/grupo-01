@@ -14,6 +14,7 @@ app.use(session({
 app.use(cookies());
 app.use(methodOverride("_method"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false}))
 
 // Para poder ver las vistas
 const publicPath = path.resolve(__dirname, "../public");

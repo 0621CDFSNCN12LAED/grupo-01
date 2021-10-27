@@ -40,38 +40,74 @@
 <main>
     <div class="flex-mayor-re">
         
-    <form class="flex-form-re">
+        
+    <form class="flex-form-re" method="POST" action="/users/register" enctype="multipart/form-data">
         
         <div> 
             <label for="name">Nombre y apellido</label>
-            <input type="text" name="name" id="name" >
+            <% if (locals.errors && errors.name) { %>
+                <%= errors.name.msg %>
+                <% } %>  
+            <input type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null %>">
+         
         </div>
         <div>
             <label for="username">Nombre de usuario</label>
-            <input type="text" name="username" id="username">
+            <% if (locals.errors && errors.username) { %>
+                <%= errors.username.msg %>
+                <% } %>  
+            <input type="text" name="username" id="username" value="<%= locals.oldData ? oldData.username : null %>">
         </div>
+
+        <div>
+            <label for="email">Direccion de correo electronico</label>
+            <% if (locals.errors && errors.email) { %>
+                <%= errors.email.msg %>
+                <% } %>  
+            <input type="email" name="email" id="username" value="<%= locals.oldData ? oldData.email : null %>">
+            
+        </div>
+
         <div>
             <label>Seleccionar una imagen para el perfil:</label>
-            <input class="sacar-esto" type="file" name=avatar accept=".jpg, .npg">
+            <input class="sacar-esto" type="file" name=avatar>
+            <% if (locals.errors && errors.avatar) { %>
+                <%= errors.avatar.msg %>  
+                <% } %> 
+
         </div>
         <div>
             <label for="birthdate">Fecha de nacimiento</label>
-            <input type="date" name="birthdate" id="birthdate">
+            <% if (locals.errors && errors.birthdate) { %>
+                <%= errors.birthdate.msg %>
+                <% } %> 
+            <input type="date" name="birthdate" id="birthdate" value="<%= locals.oldData ? oldData.birthdate : null %>"> 
         </div>
         <div>
             <label for="adress">Domicilio</label>
-            <input type="text" name="adress" id="adress">
+            <% if (locals.errors && errors.adress) { %>
+                <%= errors.adress.msg %>
+                <% } %>
+            <input type="text" name="adress" id="adress" value="<%= locals.oldData ? oldData.adress : null %>"> 
         </div>
         
         
         
         <div>
-            <label for="password">Contraseña</label>
+            <label for="password">Contraseña</label> 
+            <% if (locals.errors && errors.password) { %>
+                <%= errors.password.msg %>
+                <% } %>
             <input type="password" name="password" id="password">
+           
         </div>
         <div>
             <label for="confirmPassword">Confirmar contraseña</label>
+            <% if (locals.errors && errors.confirmPassword) { %>
+                <%= errors.confirmPassword.msg %>
+                <% } %>
             <input type="password" name="confirmPassword" id="confirmPassword">
+            
         </div>
         <div>
             <h2><button type="submit" class="redondo">Aceptar</button></h2>
@@ -81,6 +117,10 @@
 
         
 </form>
+<div>
+    
+</div>
+
 
 
 <div class="registrarse-laptop-re flex-abajo">

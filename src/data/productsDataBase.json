@@ -21,7 +21,7 @@
         "Envio": "Envio a cobrar",
         "image": "Remera-Given.jfif",
         "stock": 2,
-        "deleted": false
+        "deleted": true
     },
     {
         "id": 3,

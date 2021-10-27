@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--El head-->
+    <%- include ("partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/products.css">
+    </head>
+<body>
+    
+
+    <% for (let user of users) { %>
+
+        <a href="/users/user-profile/<%= user.id %>">
+                            <article class="container articulo">
+                                <div class= "product-image"> 
+                                   <!-- <img src="/images/recomendado-1.jpeg" width="100%" /> -->
+                                    <img src="/../images/users/<%= user.avatar %>" alt="imagen" width="100%" />
+                                   
+                                </div>
+                                <div class= "product-properties">
+                                    <p class="product-title">Nombre de usuario: <%= user.username %> </p>
+                                    <p class="product-title"> <%= user.name %> </p>
+                                    <!-- if product.discount > 0 entonces  -->
+                                    <div>
+                                        <p class="product-price tachado">$<%= user.birthdate %> </p>
+                                        
+                                    </div>
+                                   
+                                    <!-- else
+                                    <p class="product-price">$0.00</p> -->
+                                    <p class="envio"> <%= user.id %> </p>
+                                </div>
+                            </article>
+                        </a>
+    
+    <% } %> 
+
+    <form action="/users/register" method="GET">
+        <button type="submit">
+            Registrarse
+        </button>
+        </form>
+
+
+
+</body>
+</html>

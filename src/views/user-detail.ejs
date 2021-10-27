@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuTuni-Detalle Producto</title>
+     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-home.css" />
+    <link rel="stylesheet" href="/css/product-detail.css">
+  
+</head>
+<body>
+    <header><%- include("partials/header") %> </header>
+       
+    
+    
+        <main>
+          <div>
+              <p> <%= user.name %>  </p>
+              <p> <%= user.username %>  </p>
+              <p> <%= user.email %>  </p>
+              <p> <%= user.birthdate %>  </p>
+              <p> <%= user.adress %>  </p>
+              <p> <%= user.password %>  </p>
+              <p> <%= user.admin %>  </p>
+              <p> <%= user.deleted %>  </p>
+          </div>
+
+
+          <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+            <button type="submit">
+                Borrar usuario
+            </button>
+            </form>
+
+</main>
+    
+
+
+    
+
+</body>
+
+</html>
