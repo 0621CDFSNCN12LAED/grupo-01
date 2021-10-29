@@ -575,9 +575,9 @@ section{
 }
 
 @media (min-width:1000px){
-     html{
+     /* html{
         font-size: 75%;
-    }
+    } */
 
     .recomendado .box{
         max-height: 55rem;  
