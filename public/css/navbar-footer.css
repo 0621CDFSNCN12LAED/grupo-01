@@ -17,7 +17,32 @@
     width: 4rem;
     height: 2.5rem;
 }
-    /* LA VERDAD LO TENGO POR TENER, NO HACE NADA */
+    /* PROBANDO LA BARRA LATERAL DEL BURGUER*/
+
+#menu {
+    position: fixed;
+    width: 20rem;
+    height: 22.5rem;
+    border-end-end-radius: 1.5rem;
+    background-color: rgba(37, 37, 37, 0.88);
+    top: 6.55rem;
+    left: -20rem;
+}
+    
+#menu ul li {
+    color: #fff;
+    font-size: 2rem;
+    list-style: none;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    /* border-bottom: 1px solid rgb(100, 100, 100, .88); */
+}
+    
+#menu.mostrar {
+    left: 0
+}
+
+    /* PROBANDO LA BARRA LATERAL DEL BURGUER*/
 
 
 .header .logo img{
