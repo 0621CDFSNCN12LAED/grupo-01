@@ -49,16 +49,6 @@
     },
     {
         "id": 5,
-        "name": "ShreK",
-        "image": "image-1633391370515.jpg",
-        "stock": 1,
-        "price": 25000000,
-        "discount": 10,
-        "description": "",
-        "deleted": false
-    },
-    {
-        "id": 6,
         "name": "Sombrero Mexicano",
         "image": "image-1633394081382.jpg",
         "category": "accesorios",
@@ -80,7 +70,7 @@
         "enviogratis": "Envio gratis",
         "description": "Esta es una remera Negra 2.0",
         "image": "image-1634588336912.jpg",
-        "id": 7,
+        "id": 6,
         "deleted": true
     }
 ]

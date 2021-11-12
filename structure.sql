@@ -92,3 +92,7 @@ VALUES
 INSERT INTO users(id, fullName, username, email, birthdate, password, deleted, rolesId)
 VALUES
 (default,"Salvador Carou","sal","salvadorcarou@gmail.com", "2200-02-20", "$2a$10$Th5CDYUB0EM2Xg88yIoGjeyIo6B6rCIy/fIK0qBvOOuYfcFGx67Z6", 0, 2);
+
+INSERT INTO products
+VALUES
+(default,"Remera Negra", "image-1634588336912.jpg", 2500, 10, "medium", "Esta es una remera Negra 2.0", 5, 0, 1);
