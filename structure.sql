@@ -23,7 +23,7 @@ CREATE TABLE products (
     discount TINYINT NOT NULL DEFAULT 0,
     size TEXT NOT NULL,
     description TEXT NOT NULL,
-    stock INT NOT NULL
+    stock INT NOT NULL,
     deleted BIT(1) NOT NULL DEFAULT 0,
     --   verdadero 1, falso 0
     categoryId INT NOT NULL,
@@ -72,3 +72,4 @@ CREATE TABLE product_user_fav(
   FOREIGN KEY (productId) REFERENCES products(id),
   FOREIGN KEY (userId) REFERENCES users(id)
 ); 
+
