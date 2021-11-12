@@ -1,27 +1,14 @@
 [
     {
-        "id": 1,
-        "name": "ProbandoMati",
-        "username": "Mati",
-        "email": "mati@gmail.com",
-        "avatar": "pantalon-aynot.jpg",
-        "birthdate": "1998-23-10",
-        "adress": "Pepito 123",
-        "password": "blablabla",
-        "confirmPassword": "blablabla",
-        "admin": 1,
-        "deleted": false
-    },
-    {
         "name": "Salvador Carou",
-        "username": "sallllllllllllllllllllllllllll",
+        "username": "sal",
         "email": "salvadorcarou@gmail.com",
         "birthdate": "2200-02-20",
         "adress": "sdfsffg",
         "password": "$2a$10$Th5CDYUB0EM2Xg88yIoGjeyIo6B6rCIy/fIK0qBvOOuYfcFGx67Z6",
         "confirmPassword": "",
-        "id": 2,
-        "admin": 0,
+        "id": 1,
+        "admin": 2,
         "avatar": "avatar-1635294160980.jpg"
     },
     {
@@ -32,8 +19,8 @@
         "adress": "calle232323",
         "password": "$2a$10$f9N.JY0x/BPvo1enP2T5zuKGJRuzax6bRTvBPAF.VgMHXG5oog72K",
         "confirmPassword": "$2a$10$nQbYrXJgfezgOYt3P1rWDO8qlE2kja9bkApNeywfSV98GzLaFc3lK",
-        "id": 3,
-        "admin": 0,
+        "id": 2,
+        "admin": 1,
         "avatar": "avatar-1635300347538.jpg"
     }
 ]

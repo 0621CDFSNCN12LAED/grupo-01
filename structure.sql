@@ -73,3 +73,22 @@ CREATE TABLE product_user_fav(
   FOREIGN KEY (userId) REFERENCES users(id)
 ); 
 
+
+INSERT INTO roles
+VALUES
+(default, "guest"),
+(default, "admin");
+
+INSERT INTO category
+VALUES
+(default, "Remera"),
+(default, "Pantalon"),
+(default, "Abrigo"),
+(default, "Calzado"),
+(default, "Moda Intima"),
+(default, "Accesorios");
+
+
+INSERT INTO users(id, fullName, username, email, birthdate, password, deleted, rolesId)
+VALUES
+(default,"Salvador Carou","sal","salvadorcarou@gmail.com", "2200-02-20", "$2a$10$Th5CDYUB0EM2Xg88yIoGjeyIo6B6rCIy/fIK0qBvOOuYfcFGx67Z6", 0, 2);
