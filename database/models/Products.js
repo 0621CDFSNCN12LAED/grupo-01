@@ -23,10 +23,34 @@ module.exports = (sequelize) => {
 
     const Product = sequelize.define("Products", cols,
         {
-        tableName: "users",
+        tableName: "products",
         timestamps: false,
         }
     );
+
+    Product.associate = function (models) {
+        Product.hasOne(models.Category, {
+          as: "category",
+          foreignKey: "categoryId",
+        });
+
+        Product.belongsToMany(models.Carts, {
+            as: "carts", //lo que voy a usar para llamar en el controlador include:[{association:"carts"}]
+            through: "cart_product",
+            foreignKey: "productId",
+            otherKey: "cartId",
+            timestamps: false
+        })
+
+        Product.belongsToMany(models.Users, {
+            as: "users", 
+            through: "product_user_fav",
+            foreignKey: "productId",
+            otherKey: "userId",
+            timestamps: false
+        })
+
+    };
 
     return Product;
 };

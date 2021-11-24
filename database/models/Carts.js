@@ -21,5 +21,20 @@ module.exports = (sequelize) => {
         }
     );
 
+    Cart.associate = function (models){
+        Cart.belongsToMany(models.Products, {
+            as: "products", //lo que voy a usar para llamar en el controlador include:[{association:"products"}]
+            through: "cart_product",
+            foreignKey: "cartId",
+            otherKey: "productId",
+            timestamps: false
+        })
+    }
+
+    Cart.hasOne(models.Users, {
+        as: "user",
+        foreignKey: "userId",
+    });
+    
     return Cart;
 };

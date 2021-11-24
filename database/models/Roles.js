@@ -16,10 +16,17 @@ module.exports = (sequelize) => {
 
     const Role = sequelize.define("Roles", cols,
         {
-        tableName: "users",
+        tableName: "roles",
         timestamps: false,
         }
     );
+
+    Role.associate = function (models) {
+        Role.hasMany(models.Users, {
+          as: "user",
+          foreignKey: "rolesId",
+        });
+    };
 
     return Role;
 };
