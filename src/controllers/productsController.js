@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const db = require("../../database/models/index");
 // const multer = require("multer");
 // const { monitorEventLoopDelay } = require("perf_hooks");
 // const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -7,28 +8,48 @@ const path = require("path");
 const appService = require("../services/appService");
 
 const controller = {
+
+  index: async (req, res) => {
+    const products = await db.Products.findAll(
+      {
+        where: { deleted: false }
+      }
+    );
+    res.render("products", { products });
+  },
+
+  detail: async (req, res) => {
+    const product = await db.Products.findByPk(req.params.id);
+    res.render('product-detail', { elegido: product });
+  },
+
+  create: async (req, res) => {
+    const categories = await db.Categories.findAll();
+    res.render("createProduct", { categories });
+  },
+
+  store: async (req, res) => {
+
+    //prueba para sacar el id - chequear mas adelante
+const allProducts = await db.Products.findAll()
+const lastId = allProducts.length
+
+    await db.Products.create(
+      {
+        id : lastId + 1,
+        name : req.body.name,
+        categoryId : Number(req.body.category),
+        stock : Number(req.body.stock),
+        size : req.body.talles,
+        price : Number(req.body.price),
+        discount : Number(req.body.discount),
+        deleted : Number(0),
+        image : req.file.filename,
+        //envio gratis  ---   no esta agregado a la base de datos
+        description : req.body.description
   
-  index: (req, res) => {
-    const notEraseProducts = appService.findAll();
-    res.render("products", { products: notEraseProducts });
-  },
-
-  detail: (req, res) => {
-    const productEncontrado = appService.findById(req.params.id);
-    if (productEncontrado && (productEncontrado.deleted == false)) {
-      res.render("product-detail", { elegido : productEncontrado });
-    } else {
-      res.send("El producto ya no existe o nunca existio");
-    }
-  },
-
-  create: (req, res) => {
-    res.render("createProduct");
-  },
-
-  // Create
-  store: (req, res) => {
-    appService.createProduct(req.body, req.file)
+      }
+    )
     res.redirect("/products");
   },
 

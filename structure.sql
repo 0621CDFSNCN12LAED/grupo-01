@@ -3,9 +3,9 @@ CREATE DATABASE tutuni_db;
 USE tutuni_db;
 
 CREATE TABLE category(
-    id INT NOT NULL AUTO_INCREMENT,
-    categoryName VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    categoryName VARCHAR(30) NOT NULL
+    
 );
 
 CREATE TABLE roles(

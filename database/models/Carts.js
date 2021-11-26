@@ -29,12 +29,13 @@ module.exports = (sequelize) => {
             otherKey: "productId",
             timestamps: false
         })
-    }
+    
 
-    Cart.hasOne(models.Users, {
+    Cart.belongsTo(models.Users, {
         as: "user",
         foreignKey: "userId",
     });
-    
+    }
+
     return Cart;
 };

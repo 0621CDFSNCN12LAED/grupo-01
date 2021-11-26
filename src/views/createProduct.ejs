@@ -69,13 +69,9 @@
                             <label for="category" class="create-letter">Categoria</label>
                             <div class="same-line">
                                 <select name="category" id="category" class="user-answer-select">
-                                    <option value="" disabled selected>Elegí</option>
-                                    <option value="remera">Remera</option>
-                                    <option value="pantalon">Pantalon</option>
-                                    <option value="abrigo">Abrigo</option>
-                                    <option value="calzado">Calzado</option>
-                                    <option value="moda-intima">Moda Intima</option>
-                                    <option value="accesorios">Accesorios</option>
+                                    <% for (const category of categories) { %>
+                                        <option value="<%= category.id %>"><%= category.categoryName %></option>
+                                        <% } %>
                                 </select>
                             </div>
                         </div>
