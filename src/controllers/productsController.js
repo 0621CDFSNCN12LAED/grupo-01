@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const { monitorEventLoopDelay } = require("perf_hooks");
 const db = require("../../database/models/index");
+const Products = require("../../database/models/Products");
 // const multer = require("multer");
 // const { monitorEventLoopDelay } = require("perf_hooks");
 // const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -64,10 +66,18 @@ const lastId = allProducts.length
     res.redirect("/products");
   },
 
-  destroy: (req, res) => {
-    appService.deleteProduct(req.params.id);
-    res.redirect("/products");
-  }
+  destroy: async (req, res) => {
+    const destroyOne = {
+      deleted: 1
+    }
+    await db.Products.update(destroyOne, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.redirect('/products');
+  },
+
 };
 
 module.exports = controller;
