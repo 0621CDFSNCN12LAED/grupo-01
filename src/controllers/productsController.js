@@ -3,6 +3,7 @@ const path = require("path");
 const { monitorEventLoopDelay } = require("perf_hooks");
 const db = require("../../database/models/index");
 const Products = require("../../database/models/Products");
+const imageDefault =  "imagenDefault.png"
 // const multer = require("multer");
 // const { monitorEventLoopDelay } = require("perf_hooks");
 // const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -31,7 +32,6 @@ const controller = {
   },
 
   store: async (req, res) => {
-
     //prueba para sacar el id - chequear mas adelante
 const allProducts = await db.Products.findAll()
 const lastId = allProducts.length
@@ -46,7 +46,7 @@ const lastId = allProducts.length
         price : Number(req.body.price),
         discount : Number(req.body.discount),
         deleted : Number(0),
-        image : req.file.filename,
+        image : req.filename ? req.file.filename : imageDefault,
         //envio gratis  ---   no esta agregado a la base de datos
         description : req.body.description
   
@@ -56,13 +56,29 @@ const lastId = allProducts.length
   },
 
   // Update 
-  edit: (req, res) => {
-    const productEncontrado = appService.findById(req.params.id);
-    res.render("editProduct", { elegido : productEncontrado } );
+  edit: async (req, res) => {
+    // const productEncontrado = appService.findById(req.params.id);
+    const categories = await db.Categories.findAll();
+    const productEncontrado = await db.Products.findOne({ where: { id: req.params.id}});
+    res.render("editProduct", { elegido : productEncontrado,  categories } );
   },
  
-  update: (req, res) => {
-    appService.editOne(req.params.id, req.body, req.file)
+  update: async (req, res) => {
+    await db.Products.update({
+        name : req.body.name,
+        categoryId : Number(req.body.category),
+        stock : Number(req.body.stock),
+        size : req.body.size,
+        price : Number(req.body.price),
+        discount : Number(req.body.discount),
+        deleted : Number(0),
+        image : req.filename ? req.file.filename : image,
+        // image ? image.filename : product.image
+        //envio gratis  ---   no esta agregado a la base de datos
+        description : req.body.description
+    },
+    { where: {id: req.params.id}})
+
     res.redirect("/products");
   },
 

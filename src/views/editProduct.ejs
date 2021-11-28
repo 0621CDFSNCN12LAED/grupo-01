@@ -54,6 +54,7 @@
                     para que la vista se vea linda -->
                     
                     <input
+                    value="<%= elegido.image %> "
                     class="form-input"
                     type="file"
                     id="image"
@@ -68,15 +69,13 @@
                         <div class="column-flex">
                             <label for="category" class="create-letter">Categoria</label>
                             <div class="same-line">
+
                                 <select name="category" id="category" class="user-answer-select">
-                                    <option value="" disabled selected><%= elegido.category %></option>                                    
-                                    <option value="remera">Remera</option>
-                                    <option value="pantalon">Pantalon</option>
-                                    <option value="abrigo">Abrigo</option>
-                                    <option value="calzado">Calzado</option>
-                                    <option value="moda-intima">Moda Intima</option>
-                                    <option value="accesorios">Accesorios</option>
+                                    <% for (const oneCategory of categories) { %>
+                                        <option value="<%= oneCategory.id %>"><%= oneCategory.categoryName %></option>
+                                        <% } %>
                                 </select>
+
                             </div>
                         </div>
                     </div>
@@ -107,13 +106,14 @@
                         <div class="column-flex">
                             <label for="talles" class="create-letter">Talles</label>
                             <div class="same-line">
-                                <select name="talles" id="talles" class="user-answer-select">
-                                    <option value="" disabled selected><%= elegido.Talle %></option>
-                                    <option value="xsmall">XS</option>
-                                    <option value="small">S</option>
-                                    <option value="medium">M</option>
-                                    <option value="large">L</option>
-                                    <option value="xlarge">XL</option>
+                                <select name="size" id="size" class="user-answer-select">
+                                    
+                                    <option value="<%= elegido.size %>" disabled selected><%= elegido.size %> </option>
+                                    <option value="xsmall">xsmall</option>
+                                    <option value="small">small</option>
+                                    <option value="medium">medium</option>
+                                    <option value="large">large</option>
+                                    <option value="xlarge">xlarge</option>
                                     
                                    
                                 </select>
@@ -129,7 +129,7 @@
                             <div class="same-line">
                                 <p class="block-letter-extras2">$</p>
                                 <input
-                                value="<%= elegido.price %>"
+                                    value="<%= elegido.price %>"
                                     class="user-answer"
                                     type="number"
                                     id="price"
@@ -223,6 +223,8 @@
                 <label for="description" class="create-letter white">Descripción</label>
                 <div class="position-area">
                     <textarea
+                        value="<%= elegido.description %>"
+                        placeholder="<%= elegido.description %>"
                         name="description"
                         id="description"
                         class="description-area"
