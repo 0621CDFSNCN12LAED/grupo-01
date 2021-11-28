@@ -46,7 +46,7 @@ const lastId = allProducts.length
         price : Number(req.body.price),
         discount : Number(req.body.discount),
         deleted : Number(0),
-        image : req.filename ? req.file.filename : imageDefault,
+        image : req.file ? req.file.filename : imageDefault,
         //envio gratis  ---   no esta agregado a la base de datos
         description : req.body.description
   
@@ -64,6 +64,7 @@ const lastId = allProducts.length
   },
  
   update: async (req, res) => {
+    const productEncontrado = await db.Products.findOne({ where: { id: req.params.id}});
     await db.Products.update({
         name : req.body.name,
         categoryId : Number(req.body.category),
@@ -72,8 +73,8 @@ const lastId = allProducts.length
         price : Number(req.body.price),
         discount : Number(req.body.discount),
         deleted : Number(0),
-        image : req.filename ? req.file.filename : image,
-        // image ? image.filename : product.image
+        image : req.file ? req.file.filename : productEncontrado.image,
+                // image ? image.filename : product.image
         //envio gratis  ---   no esta agregado a la base de datos
         description : req.body.description
     },
@@ -81,7 +82,6 @@ const lastId = allProducts.length
 
     res.redirect("/products");
   },
-
   destroy: async (req, res) => {
     const destroyOne = {
       deleted: 1

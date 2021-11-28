@@ -4,7 +4,7 @@
   "description": "Equipo:\r Federico Cristaldo\r Guido Testorelli\r Matias Prieto\r Salvador Carou",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,8 @@
     "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0",
     "sequelize-cli": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

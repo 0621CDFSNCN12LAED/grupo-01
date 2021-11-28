@@ -10,7 +10,7 @@ CREATE TABLE category(
 
 CREATE TABLE roles(
     id INT NOT NULL AUTO_INCREMENT,
-    roleName  VARCHAR(30), NOT NULL,
+    roleName  VARCHAR(30) NOT NULL,
     PRIMARY KEY (id)
 );
 
