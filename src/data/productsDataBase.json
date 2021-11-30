@@ -71,6 +71,6 @@
         "description": "Esta es una remera Negra 2.0",
         "image": "image-1634588336912.jpg",
         "id": 6,
-        "deleted": true
+        "deleted": false
     }
 ]

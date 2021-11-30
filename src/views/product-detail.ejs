@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TuTuni-Detalle Producto</title>
-     
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap"rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles-home.css" />
+    <!--El head-->
+    <%- include ("partials/head.ejs") %>
+    <!-- <link rel="stylesheet" href="/css/createProduct.css"> -->
+    </head>
+    <!--El head-->
+    <body class="background">
+        <%- include ("partials/header.ejs") %>
+    <!--</body>-->
+    
     <link rel="stylesheet" href="/css/product-detail.css">
-  
-</head>
-<body>
-    <header><%- include("partials/header") %> </header>
-       <!----<header class="position-top-bar">
-            <div class="top-bar">
-                <img src="images/menu.svg" alt="Menu" class="icon-size-menu">
-                <div class="background-tutuni">
-                    <h3 class="tutuni">TuTuni</h3>
+    <main class="below-head-bar">
+
+        <div>
+            <div class="product-title"> <%= elegido.name %> </div>
+        </div>
+
+        <section class="images">
+            <div class="images-container">
+                <div class="flex-image-small">
+                    <div class="image-small">
+                        <img src="../../images/agregar-imagen.png" alt="add-image-small" class="add-image-small">
+                    </div>
+                    <div class="image-small">
+                        <img src="../../images/agregar-imagen.png" alt="add-image-small" class="add-image-small">
+                    </div>
+                    <div class="image-small">
+                        <img src="../../images/agregar-imagen.png" alt="add-image-small" class="add-image-small">
+                    </div>
+                    <div class="image-small">
+                        <img src="../../images/agregar-imagen.png" alt="add-image-small" class="add-image-small">
+                    </div>
                 </div>
-                <div class="container-relative">
-                    <a href="/carrito">
-                        <img src="/images/carrito.svg" alt="Carrito de compras" class="icon-size-shopping">
-                        <p class="quantity-cart">0</p>
-                    </a>
+                <div class="main-image-container">
+                    <div class="main-image">
+                        <img  src="/../images/productos/<%= elegido.image %>" alt="image" width="100%" class="product-image">
+                    </div>
                 </div>
             </div>
-        </header>--> 
-    
-    
-    
-        <main>
-          <section>
-    <div class="article-detail-main">
-                <div><h3 class="product-title"> <%= elegido.name %> </h3></div>
-                <div><img src="/../images/productos/<%= elegido.image %>" alt="imagen" width="100%" class="product-image"></div>
-            <div class="price">
-                <i class="fas fa-dollar-sign"></i> $<%= elegido.price - (elegido.price * (elegido.discount/100)) %> ARS</div>
+        </section>
+
+        <section class="size">
             <div class="size-container">
                 <div class="size-circle">XS</div>
                 <div class="size-circle">S</div>
@@ -47,55 +49,69 @@
                 <div class="size-circle">XL</div>
                 <div class="size-circle">XXL</div>
             </div>
-            <a href="" class="item-margin"><div class="size-guide"><i class="fas fa-ruler-horizontal"></i> Guía de Talles y Cortes</div></a>
-            
-            <div class="container-cantidad-añadir">
-            
-                <select class="select">
-            
-                    <optgroup label="Cantidad">
-            
-                        <option value="1">
-                            1
-                        </option>
-                
-                        <option value="2">
-                            2
-                        </option>
-                
-                        <option value="3">
-                            3
-                        </option>
-                
-                        <option value="4">
-                            4
-                        </option>
-                
-                        <option value="5">
-                            5
-                        </option>
-            
-                    </optgroup>
-                </select>
-                <a href=""><button class="addtocart-button">Añadir al carrito</button></a>
+        </section>
+        
+        <div class="size-guide">
+            <i class="fas fa-ruler-horizontal ruler"></i>
+            Guía de Talles y Cortes
+        </div>
+
+        <section class="article-info">
+            <div>
+                <p class="product-price tachado">$<%= elegido.price %> </p>
+                <div class="same-line">
+                    <p class="product-price-discount">$ <%= elegido.price - (elegido.price * (elegido.discount/100)) %>  </p>
+                    <p class="discount"> <%= elegido.discount %>%  OFF</p>
+                </div>
             </div>
-            <a href=""class="item-margin-saveforlater"><div class="saveforlater"><i class="far fa-heart"></i> Guardar en Favoritos</div></a>
 
-            
-                </div> 
-                 <form action="/products/delete/<%= elegido.id %>?_method=DELETE" method="POST">
-                <button type="submit">
-                    Borrar producto
-                </button>
-                </form>
-                <a href="/products/edit/<%= elegido.id %>">Editar este producto</a>
-</section>
-</main>
-    </div>
-
-
+            <div>
+                <div class="button">
+                    <button class="add-buy buy">Comprar Ahora</button>
+                </div>
     
+                <div class="button">
+                    <button class="add-buy add">Añadir al carrito</button>
+                </div>
+            </div>
+        </section>
 
-</body>
+        <section class="article-info">
+            <div>
+                <p class="info-title">Información del Producto</p>
+                <p class="info-subtitle"> Categoría</p>
+                <p class="article-data"><%= elegido.category %></p>
+                <!-- OJO QUE NO ME LO TRAE -->
+                <p class="info-subtitle"> Stock Disponible </p>
+                <p class="article-data"> Contamos con <%= elegido.stock %> unidades, cualquier cosa porfavor consultarnos.</p>
+                <p class="info-subtitle"> Descipción </p>
+                <p class="article-data"> <%= elegido.description %></p>
+            </div>
+
+
+
+
+            <div class="favorites">
+                <i class="far fa-heart heart"></i> 
+                Guardar en Favoritos
+            </div>
+        </section>
+    </main>
+
+    <%- include ("partials/footer.ejs") %>
 
 </html>
+
+
+ 
+<!-- CREO QUE ACA SE DEBERIA PREGUNTAR SI EL QUE ENTRO ES EL QUE CREO EL PRODUCTO
+                EN ESE CASO TENDRIA ESTAS OPCIONES. -->
+
+    <!-- <div>
+        <form action="/products/delete/<%= elegido.id %>?_method=DELETE" method="POST">
+        <button type="submit">
+            Borrar producto
+        </button>
+        </form>
+        <a href="/products/edit/<%= elegido.id %>">Editar este producto</a>
+    </div> -->
