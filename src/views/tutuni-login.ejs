@@ -51,25 +51,33 @@
     
 
     <main>
+      usuario para probar: <br>
+      tutuni@gmail.com <br>
+      123456 <br>
       <div class="flex-mayor">
-        <form class="flex-form">
+        <form class="flex-form" method="POST" action="/users/login">
           <div>
-            <label for="username">Usuario</label>
-            <i class="far fa-user color-icono"></i
-            ><input
-              type="text"
-              name="username"
-              id="name"
-              placeholder="Usuario"
+            <label for="email">Email</label>
+            <i class="far fa-user color-icono"></i>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Direccion de correo"
             />
           </div>
+          
+          <% if (locals.errors && errors.email) { %>
+           <div> <%= errors.email.msg %>  </div>  <!--para editar ese texto ir a userController/processLogin-->
+          <% } %>
+        
           <div>
             <label for="password"></label>
             <i class="fas fa-unlock color-icono"></i
             ><input
               type="password"
               name="password"
-              id="Contraseña"
+              id="password"
               placeholder="Contraseña"
             />
           </div>

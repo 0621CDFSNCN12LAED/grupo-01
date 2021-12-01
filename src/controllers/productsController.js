@@ -22,7 +22,7 @@ const controller = {
   },
 
   detail: async (req, res) => {
-    const product = await db.Products.findByPk(req.params.id);
+    const product = await db.Products.findByPk(req.params.id, {include: ["category"]});
     res.render('product-detail', { elegido: product });
   },
 

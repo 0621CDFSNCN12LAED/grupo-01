@@ -96,3 +96,5 @@ VALUES
 INSERT INTO products
 VALUES
 (default,"Remera Negra", "image-1634588336912.jpg", 2500, 10, "medium", "Esta es una remera Negra 2.0", 5, 0, 1);
+
+ALTER TABLE users ADD COLUMN image VARCHAR(100) NOT NULL

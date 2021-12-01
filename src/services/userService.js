@@ -1,6 +1,8 @@
 const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const path = require("path");
+const db = require("../../database/models");
+// const { all } = require("sequelize/types/lib/operators");
 
 const usersPath = path.join(__dirname, "../data/usersDataBase.json");
 const users = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
@@ -45,8 +47,25 @@ const userService = {
         const user = this.findById(id);
         user.deleted = true;
         this.writeJson();
+    },
+
+     findByEmail(text) { 
+        
+        const usersFound =  db.Users.findOne({
+            where : { email : text }
+        })
+        return usersFound
+    },
+
+    async findByPassword(text) { 
+        
+        const usersFoundPass = await db.Users.findOne({
+            where : { password : text }
+        })
+        return usersFoundPass
     }
 
 }
+
 
 module.exports = userService;

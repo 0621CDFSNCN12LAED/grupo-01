@@ -31,4 +31,7 @@ router.get('/logout/', usersController.logout);
 // Listado de usuarios
 router.get('/', usersController.index)
 
+// Borrar usuarios (mas que nada para probar)
+router.delete("/delete/:id", usersController.destroy);
+
 module.exports = router;

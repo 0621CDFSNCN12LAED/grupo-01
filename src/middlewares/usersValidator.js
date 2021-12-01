@@ -3,31 +3,43 @@ const { body } = require('express-validator');
 
 const validations = [
     body('name')
-        .not().isEmpty() //el notEmpty() aparentemente no existe mas o tiene errores
+        .notEmpty()
+        .withMessage("Debes completar el campo") 
+        .bail()
         .isLength({min:4, max:20})
-        .withMessage("Debes completar el campo"),
+        .withMessage("Debe tener 4 o mas caracteres"),    
     body('username')
-        .not().isEmpty()
+        .notEmpty()
+        .withMessage("Debes completar el campo")
+        .bail()
         .isLength({min:4, max:20})
-        .withMessage("Debes completar el campo"),
+        .withMessage("Debe tener 4 o mas caracteres"),
     body('birthdate')
         .not().isEmpty(),
     body('email')
-        .not().isEmpty()
+        .notEmpty()
+        .withMessage("Debes completar este casillero")
+        .bail()
         .isEmail()
         .withMessage("Debes completar con una direccion de email"),
     body('adress')
-        .not().isEmpty()
+        .notEmpty()
+        .withMessage("Esta direccion es muy corta")
+        .bail()
         .isLength({min:4, max:30})
         .withMessage("Debes completar el campo"),
     body('password')
-        .not().isEmpty()
+        .notEmpty()
+        .withMessage("No escribiste")
+        .bail()
         .isLength({min:4, max:20})
-        .withMessage("no escribiste o es una contraseña malisima"),
+        .withMessage("Malisima, muy corta"),
     body('confirmPassword')
-        .not().isEmpty()  
+        .notEmpty()
+        .withMessage("Debes completar el campo")
+        .bail()
         .isLength({min:4, max:20})
-        .withMessage("Debes completar el campo"),
+        .withMessage("No sirve"),
     // body('avatar').custom((value, { req }) => {
     //     let acepted = ['.jpeg', '.png', '.gif'];
     //     let fileExtension = path.extname(file.originalname);
