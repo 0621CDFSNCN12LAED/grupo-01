@@ -1,0 +1,132 @@
+:root{
+    --main-color:rgb(140, 240, 140);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 222, 222);
+    --black:#13131a;
+    --bg:#010103;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif; 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: .2s linear;
+}
+       
+html{
+    font-size: 62.5%;
+    /* Snook trick so rem looks easier to know the amount
+    1rem = 10px  1,4rem = 14px */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+.background{
+    background:url(../images/fondo-verde-mobile.jpg) no-repeat;
+    background-size: cover;
+}
+
+/*--------------------------------------------*/
+body main {
+    margin:3rem;
+}
+
+.below-head-bar{
+    margin: 9.5rem 0 13rem;
+}
+
+.title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.login-box{
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.flex-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.flex-form label {
+    display: none;
+}
+
+.between-space{
+    margin-top: 5rem;
+    width: 90%;
+}
+
+.input {
+    border: none;
+    width: 90%;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    border-bottom: grey 0.5px solid;
+}
+
+.remember{
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.remember-text{
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.button {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #1477b2;
+    color: var(--white);
+    font-weight: 500;
+    height: 3rem;
+    width: 100%;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.flex-login-forgot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.remember-mini-text{
+    margin-top: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.redirect{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect-text{
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+.redirect-link{
+    font-size: 1.3rem;
+    border-bottom: blue 1px solid;
+}

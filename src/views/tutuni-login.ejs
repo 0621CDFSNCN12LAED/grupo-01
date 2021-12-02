@@ -1,131 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar Sesion - Tutuni</title>
-    <script
-      src="https://kit.fontawesome.com/15b3f3326b.js"
-      crossorigin="anonymous"
-    ></script>
-    <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/tutuni-inicio.registro.css" />
-    <link rel="stylesheet" href="/css/tutuni-inicio.registrotablet.css" />
-    <link rel="stylesheet" href="/css/tutuni-inicio.registrolaptop.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-      />
-      
+    <!--El head-->
+    <%- include ("partials/head.ejs") %>
+        <!-- <link rel="stylesheet" href="/css/tutuni-inicio.registro.css" /> -->
+        <link rel="stylesheet" href="/css/login.css" />
+    </head>
+
+    <body class="background">
+        <header><%- include("partials/header") %> </header>
+
+        <main>
+            <div class="below-head-bar">
+                <p class="title">Iniciar Sesión</p>
+                <div class="login-box">
+                    <form class="flex-form" method="POST" action="/users/login">
+                        <div class="between-space">
+                            <label for="email">Email</label>
+                            <i class="far fa-user color-icono"></i>
+                            <input
+                                class="input"
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Direccion de correo"
+                                />
+                        </div>
+                    
+                        <% if (locals.errors && errors.email) { %>
+                        <div> 
+                            <%= errors.email.msg %>  
+                        </div>  <!--para editar ese texto ir a userController/processLogin-->
+                        <% } %>
+                  
+                        <div class="m-top between-space">
+                            <label for="password"></label>
+                            <i class="fas fa-unlock color-icono"></i>
+                            <input
+                                class="input"
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Contraseña"
+                            />  
+                            <div>
+                                <% if (locals.errors && errors.email) { %>
+                                <div> 
+                                    <%= errors.email.msg %>  
+                                </div>  <!--para editar ese texto ir a userController/processLogin-->
+                                <% } %>
+                            </div>
+                        </div>
     
-  </head>
+                        <div class="remember">   
+                            <p class="remember-text"> Recordar usuario </p>       
+                            <input  type="checkbox" name="remember_user">
+                        </div>
+                        <div class="flex-login-forgot">
+                            <button class="button" type="submit">Ingresar</button>
+                            <a class="remember-mini-text" href="/Recuperar">¿Has olvidado tu contraseña?</a>
+                        </div>
 
-  <body>
-    <header><%- include("partials/header") %> </header>
-     
-   
-    <!-- 
-      <header>
-      <div class="flex-header-inicio">
-        <div><i class="fas fa-arrow-left"></i></div>
-        <div class="right-navbar">
-          <div class="cambio-color">
-            <a href="#"><t>Ayuda </t><i class="far fa-question-circle"></i></a>
-          </div>
-          <div class="cambio-color">
-            <a href="#"><t>Buscar </t><i class="fas fa-search"></i></a>
-          </div>
-          <div class="cambio-color">
-            <a href="#"><t>Carrito </t><i class="fas fa-shopping-cart"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="titulo"><h1>TuTuni</h1></div>
-    </header> 
-  -->
-  
-    
+                    </form>
 
-    <main>
+                    <div class="redirect">
+                        <p class="redirect-text">¿No tienes cuenta? </p>
+                        <a class="redirect-link" href="/tutuni-register">REGISTRATE</a>
+                    </div>
+
+                </div>
+
+                <!-- <div class="registrarse-laptop flex-abajo">
+                    <t>¿Todavia no tenes tu cuenta?</t>
+                    <h2>
+                    <button type="submit">
+                        <a class="sacar-azul negro" href="/tutuni-register">REGISTRATE</a>
+                    </button>
+                    </h2>
+                    <t>De esta manera vas a poder concretar tus compras y estar habilitado para vender</t>
+                </div> -->
       
-      <div class="flex-mayor">
-        
-
-        <form class="flex-form" method="POST" action="/users/login">
-          <div>
-            
-            
-            <label for="email">Email</label>
-            <i class="far fa-user color-icono"></i>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Direccion de correo"
-                  />
-          </div>
-          
-          <% if (locals.errors && errors.email) { %>
-           <div> <%= errors.email.msg %>  </div>  <!--para editar ese texto ir a userController/processLogin-->
-          <% } %>
-        
-          <div>
-            <label for="password"></label>
-            <i class="fas fa-unlock color-icono"></i
-            ><input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Contraseña"
-            />
-            
-            <div>
-              <% if (locals.errors && errors.email) { %>
-                <div> <%= errors.email.msg %>  </div>  <!--para editar ese texto ir a userController/processLogin-->
-               <% } %>
+                
             </div>
-          </div>
-          <div class="tamanoRecordar">           
-            <input class="recordarUsuario" type="checkbox" name="remember_user"> Recordar usuario
-          </div>
-          <div>
-            <button type="submit">Ingresar</button>
-            <h6>
-              <a class="sacar-azul" href="/Recuperar"
-                >¿Has olvidado tu contraseña?</a
-              >
-            </h6>
-          </div>
-          
-        </form>
-        <div class="registrarse-laptop flex-abajo">
-          <t>¿Todavia no tenes tu cuenta?</t>
-          <h2>
-            <button type="submit">
-              <a class="sacar-azul negro" href="/tutuni-register"
-                >REGISTRATE</a
-              >
-            </button>
-          </h2>
-          <t
-            >De esta manera vas a poder concretar tus compras y estar habilitado
-            para vender</t
-          >
-        </div>
-
-        <div class="flex-footer-inicio registro-inicio boton-celtab">
-          <t>¿No tienes cuenta? </t>
-          <p><a class="sacar-azul" href="/Registrarse-Tutuni">REGISTRATE</a></p>
-        </div>
-      </div>
-      
-    </main>
-    <%- include("partials/footer") %>
-     
-    
-  </body>
+            
+        </main>
+        <%- include("partials/footer") %> 
+    </body>
 </html>
+          
+
+

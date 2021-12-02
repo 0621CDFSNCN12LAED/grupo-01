@@ -1,17 +1,194 @@
-
-* {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-   
+:root{
+    --main-color:rgb(140, 240, 140);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 222, 222);
+    --black:#13131a;
+    --bg:#010103;
 }
+
+*{
+    font-family: 'Montserrat', sans-serif; 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: .2s linear;
+}
+       
+html{
+    font-size: 62.5%;
+    /* Snook trick so rem looks easier to know the amount
+    1rem = 10px  1,4rem = 14px */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+.background{
+    background:url(../images/fondo-verde-mobile.jpg) no-repeat;
+    background-size: cover;
+}
+
 /*--------------------------------------------*/
 
-header {
-    padding:0
+.below-head-bar{
+    margin: 9.5rem 0 13rem;
 }
-header h1 {   
-    font-size: 60px;
+
+.title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+    text-align: center;
 }
+
+.register-box{
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.flex-form-re {
+    display: flex;
+    flex-direction: column;
+    /* height: 100%;
+    width: 100%;  
+    justify-content: space-between; */
+}
+
+.flex-form-re label {
+    font-size: 1.7rem;
+}
+
+.flex-form-re .m-top {
+    margin-top: 3.5rem;
+    width: 100%;
+}
+.flex-form-re input {
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    border-bottom: grey 0.5px solid;
+}
+
+
+.button-flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.redirect{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect-text{
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.redirect-link{
+    font-size: 1.5rem;
+    border-bottom: blue 1px solid;
+}
+
+/* HASTA ACA EL REGISTER DE CELU - MATI */
+
+.login-box{
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.flex-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.flex-form label {
+    display: none;
+}
+
+.between-space{
+    margin-top: 5rem;
+    width: 90%;
+}
+
+.input {
+    border: none;
+    width: 90%;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    border-bottom: grey 0.5px solid;
+}
+
+
+
+.remember{
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.remember-text{
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.button {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #1477b2;
+    color: var(--white);
+    font-weight: 500;
+    height: 3rem;
+    width: 100%;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.flex-login-forgot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.remember-mini-text{
+    margin-top: 0.8rem;
+}
+
+
+
+/* HASTA ACA EL LOGIN DE CELU - MATI */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .flex-header-inicio {
     display: flex;
     justify-content: space-between;
@@ -54,20 +231,19 @@ input[type="file"]{
     border: none;
 }
 
-.tamanoRecordar {
+/* .tamanoRecordar {
     position: relative;
     width: 100px;
-
 }
 
 .recordarUsuario {
     position: absolute;
 
     left: -70px;
-}
+} */
 
 
-.sacar-esto  {
+.hide  {
     border:none;
     background-color: white;
     color: white;
@@ -86,92 +262,7 @@ body main {
 
 
 
-.flex-form {
-    margin-top: -100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.flex-form-re {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    
-    justify-content: space-between;
-    
-}
 
-.flex-form label {
-    display: none;
-}
-
-.flex-form-re label {
-    font-size: 12px;
-}
-
-
-.flex-form div {
-    margin-top: 60px;
-    width: 90%;
-}
-.flex-form-re div {
-    margin-top: 40px;
-    width: 100%;
-}
-
-.flex-form input {
-    border: none;
-    border-bottom: grey 0.5px solid;
-    width: 90%;
-    
-    font-size: 12px;
-}
-.flex-form-re input {
-    border: none;
-    border-bottom: grey 0.5px solid;
-    width: 100%;
-    font-size: 20px;
-}
-.flex-form button {
-    width: 100%;
-}
-
-
-.flex-form button {
-    border-radius: 4px;
-    background-color: black;
-    color: blanchedalmond;
-    font-weight: 300;
-    border: none;
-    height: 25px;
-}
-.flex-form-re button {
-    border-radius: 4px;
-    background-color: black;
-    color: blanchedalmond;
-    font-weight: 300;
-    border: none;
-    height: 30px;
-}
-
-.flex-form h6 {
-    margin-top: 5px;
-    font-weight: 400;
-}
-.flex-form-re h6 {
-    margin-top: 5px;
-    font-weight: 400;
-}
-
-.sacar-azul {
-    outline:none;
-    text-decoration:none;
-    color: grey;
-}    
-    
 
 
 .registro-inicio {
@@ -186,15 +277,6 @@ body main {
 
 .registrarse-laptop {
     margin-top: 30px;
-}
-.mejorar-boton {
-    border : none;
-    border-bottom: black solid 1px;
-    background-color: white;
-}
-
-.negro {
-    color: blue;
 }
 
 .color-icono {
@@ -214,12 +296,6 @@ input[type="file"]{
 }
 
 
-.flex-mayor {
-    margin-top: 250px;
-} 
-
-
-
 
 /*--------------------------------------------*/
 .fotos {
@@ -232,34 +308,11 @@ input[type="file"]{
 
 
 
-button {
-    transition: background-color, 0.5;
-    transition-duration: 0.5s;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: darkblue;
-}
-
-
-div button {
-    transition: background-color, 0.5;
-    transition-duration: 0.5s;
-    border-radius: 5px;
-}
 
 button:hover button {
     background-color: darkblue;
 }
 
-
-
-button  {
-    transition: background-color, 0.5;
-    transition-duration: 0.5s;
-    border-radius: 5px;
-}
 
 h2:hover button {
     background-color: darkblue;
@@ -288,27 +341,3 @@ h1 {
     text-decoration: black;
 }
 
-/*arreglo para header*/
-
-.position-top-bar {
-    top: 0;
-    margin-top: 0;
-}
-
-.flex-mayor-re {
-    margin-top: 150px;
-}
-
-body{
-    
- margin-top: 0;
-    margin-bottom: 150px;
-}
-
-p {
-    margin-top: 20px;
-}
-
-h2 {
-    margin: 10px 0 10px 0;
-}
