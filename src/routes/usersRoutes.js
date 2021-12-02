@@ -27,6 +27,10 @@ router.post('/login', usersController.processLogin);
 // Perfil Usuario
 router.get('/profile', authMiddleware, usersController.profile);
 
+// Editar usuario
+router.get("/profile/edit", authMiddleware, usersController.edit);
+router.put("/profile/editado", configMulter.single('avatar'), usersController.update);
+
 // Logout
 router.get('/logout/', usersController.logout);
 

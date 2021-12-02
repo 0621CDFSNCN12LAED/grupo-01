@@ -5,21 +5,36 @@
         <link rel="stylesheet" href="/css/products.css">
     </head>
 <body>
-    
+    <br>
 
     <!-- esto esta bueno para usar en el navbar -->
     <% if (locals.isLogged) { %>
-        <div>Usuario logueado: <%= locals.userLogged.username %> </div>
+        <div> 
+            <a
+         href="/users/profile">Ir a tu usuario
+        <br>
+        <%= locals.userLogged.username %> 
+        <img src="/../images/users/<%= locals.userLogged.image %>" alt="imagen" width="10%" />
+        </a>
+        </div>
        <% } else { %>
         <div>esto solo se ve si el usuario NO esta logueado</div>
        <% } %>
 
-    
-    
+    <br>
+
+
+   
+
+
+    <br>
+    <br>
+    <br><br>
+    Listado de usuarios
 
     <% for (let user of users) { %>
 
-        <a href="/users/profile">
+        
                             <article class="container articulo">
                                 <div class= "product-image"> 
                                    <!-- <img src="/images/recomendado-1.jpeg" width="100%" /> -->
@@ -40,7 +55,7 @@
                                     <p class="envio"> <%= user.id %> </p>
                                 </div>
                             </article>
-                        </a>
+                        
     
     <% } %> 
 
@@ -49,6 +64,12 @@
             Registrarse
         </button>
         </form>
+
+        <form action="/users/login" method="GET">
+            <button type="submit">
+                Login
+            </button>
+            </form>
 
 
 

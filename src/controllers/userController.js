@@ -56,7 +56,7 @@ const controller = {
             deleted : Number(0),
             rolesId : 1
         })
-        res.redirect("/users")
+        res.redirect("/tutuni-login")
         }
         
     
@@ -72,12 +72,14 @@ const controller = {
             if (correctPassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                console.log(req.body)
+                // console.log(req.body, req.session.userLogged)
 
                 if (req.body.remember_user) {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 }) // (1segundo * 60minutos) * 60veces = 1 hora
+                    console.log("se creo la cookie")
                 }
-
+                console.log("se creo la cookie")
+                console.log(req.session)
                 return res.redirect("profile")
             } else {
                 return res.render('tutuni-login', {
@@ -99,11 +101,52 @@ const controller = {
         })
 
     },
-    profile: async (req, res) => {
-        console.log(req.cookies.userEmail)
 
+    profile: async (req, res) => {
+        
         // const user = await db.Users.findByPk(req.params.id); vamos a usar el session
         res.render('user-detail', { user: req.session.userLogged })
+    },
+
+    edit: (req, res) => {
+        res.render('userEdit', { user: req.session.userLogged })
+    },
+
+    update: async (req, res) => {
+
+       const userFound = await db.Users.findOne({ where: { id: req.session.userLogged.id}});
+        const correctPassword = bcryptjs.compareSync(req.body.password, userFound.password) 
+        const oldData = req.body
+        console.log(oldData)
+        if (correctPassword) {
+            
+    await db.Users.update({
+        image : req.file ? req.file.filename : userFound.image,
+        fullName : req.body.fullName,
+        username : req.body.username,
+        email : req.body.email,
+        birthdate : req.body.birthdate,
+        }, {
+            where: {
+                id: userFound.id
+            }
+        })
+        res.redirect("/users/profile")
+
+        } else {
+            
+            // res.redirect("/users/profile/edit", { oldData: req.body }
+            res.render("userEdit", { oldData: oldData, user: req.session.userLogged }
+            // ,
+            // {
+            //     errors: {
+            //         password: {
+            //             msg: 'Esta mal'
+            //         }
+            //     }
+            // }
+            )
+        }
     },
 
     logout: (req, res) =>{
@@ -115,10 +158,12 @@ const controller = {
         const users = await db.Users.findAll({
             where: {deleted:false}
         })
-        res.render('users', {users: users})
+        res.render('users', {users: users, actualUser: req.session.userLogged })
     },
 
     destroy: async (req, res) => {
+        res.clearCookie('userEmail')
+        req.session.destroy()
         await db.Users.destroy({
             where: {id: req.params.id}
         })
