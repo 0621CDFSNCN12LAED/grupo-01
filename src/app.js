@@ -11,7 +11,14 @@ app.use(session({
     resave: false,
 	saveUninitialized: false,
 }));
+
 app.use(cookies());
+
+// Middleware que se muestra cuando un usuario esta logueado, usar si hace falta para vistas
+const loggedMiddleware = require('./middlewares/loggedMiddleware');
+app.use(loggedMiddleware)
+
+
 app.use(methodOverride("_method"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}))

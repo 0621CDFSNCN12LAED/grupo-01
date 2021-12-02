@@ -36,7 +36,7 @@ const controller = {
                 return res.render("tutuni-register", {
                     errors: {
                         email: {
-                            msg:"Este email ya esta registrado"
+                            msg: "Este email ya esta registrado"
                         }
                     },
                     oldData: req.body
@@ -51,8 +51,8 @@ const controller = {
             username : req.body.username,
             email : req.body.email,
             birthdate : req.body.birthdate,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            confirmPassword: bcryptjs.hashSync(req.body.password, 10),
+            password: bcryptjs.hashSync(req.body.password, 10),          
+            // confirmPassword: bcryptjs.hashSync(req.body.password, 10),
             deleted : Number(0),
             rolesId : 1
         })
@@ -67,25 +67,26 @@ const controller = {
     processLogin: async (req,res) =>{
 
         const userToLogin = await userService.findByEmail(req.body.email)
-
-        console.log(userToLogin)
-
-
-        if (userToLogin){
-            console.log(req.body.password)
-            console.log(userToLogin.password)
-
-           
-
-
-            const correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
-            console.log(correctPassword) // deberia dar true cuando se pone bien contraseña 
-                                         // pero da false siempre, en profile probe uno simple y anduvo
-            
+        if  (userToLogin){
+            const correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)                                    
             if (correctPassword) {
-                return res.send("buena")
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                console.log(req.body)
+
+                if (req.body.remember_user) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 }) // (1segundo * 60minutos) * 60veces = 1 hora
+                }
+
+                return res.redirect("profile")
             } else {
-                return res.redirect('login')
+                return res.render('tutuni-login', {
+                    errors: {
+                        email: {
+                            msg: 'Las credenciales no son validas'
+                        }
+                    }
+                })
             }
         } 
 
@@ -99,40 +100,21 @@ const controller = {
 
     },
     profile: async (req, res) => {
+        console.log(req.cookies.userEmail)
 
-        // Probando buscando directamente el usuario de tutuni
-
-        const usuario = await db.Users.findOne({
-            where: {id:15}
-        })
-        const contraseTutuni = usuario.password
-        console.log(usuario)
-        console.log(contraseTutuni)
-
-        const constrase = '123456'
-        
-
-
-        const ejemplo = bcryptjs.compareSync(constrase, contraseTutuni)
-        console.log(ejemplo) 
-
-        const password = "contraseña1"
-        const hashPassword = bcryptjs.hashSync("contraseña1", 10)
-
-        const correctPassword = bcryptjs.compareSync(password, hashPassword)
-        console.log(correctPassword) // este si da true
-
-
-        const user = await db.Users.findByPk(req.params.id);
-        res.render('user-detail', { user })
+        // const user = await db.Users.findByPk(req.params.id); vamos a usar el session
+        res.render('user-detail', { user: req.session.userLogged })
     },
 
     logout: (req, res) =>{
-
+        res.clearCookie('userEmail')
+        req.session.destroy()
         return res.redirect('/');
     },
     index: async (req, res) =>{
-        const users = await db.Users.findAll()
+        const users = await db.Users.findAll({
+            where: {deleted:false}
+        })
         res.render('users', {users: users})
     },
 

@@ -55,8 +55,12 @@
       tutuni@gmail.com <br>
       123456 <br>
       <div class="flex-mayor">
+        
+
         <form class="flex-form" method="POST" action="/users/login">
           <div>
+            
+            
             <label for="email">Email</label>
             <i class="far fa-user color-icono"></i>
             <input
@@ -64,7 +68,7 @@
               name="email"
               id="email"
               placeholder="Direccion de correo"
-            />
+                  />
           </div>
           
           <% if (locals.errors && errors.email) { %>
@@ -80,6 +84,15 @@
               id="password"
               placeholder="Contraseña"
             />
+            
+            <div>
+              <% if (locals.errors && errors.email) { %>
+                <div> <%= errors.email.msg %>  </div>  <!--para editar ese texto ir a userController/processLogin-->
+               <% } %>
+            </div>
+          </div>
+          <div class="tamanoRecordar">           
+            <input class="recordarUsuario" type="checkbox" name="remember_user"> Recordar usuario
           </div>
           <div>
             <button type="submit">Ingresar</button>
@@ -89,6 +102,7 @@
               >
             </h6>
           </div>
+          
         </form>
         <div class="registrarse-laptop flex-abajo">
           <t>¿Todavia no tenes tu cuenta?</t>
@@ -110,6 +124,7 @@
           <p><a class="sacar-azul" href="/Registrarse-Tutuni">REGISTRATE</a></p>
         </div>
       </div>
+      
     </main>
     <%- include("partials/footer") %>
      

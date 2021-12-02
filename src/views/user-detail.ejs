@@ -20,7 +20,7 @@
     
         <main>
           <div>
-              <p> <%= user.name %>  </p>
+              <p> <%= user.fullName %>  </p>
               <p> <%= user.username %>  </p>
               <p> <%= user.email %>  </p>
               <p> <%= user.birthdate %>  </p>
@@ -28,14 +28,28 @@
               <p> <%= user.password %>  </p>
               <p> <%= user.admin %>  </p>
               <p> <%= user.deleted %>  </p>
+              <p> <%= user.image %>  </p>
           </div>
 
-
+<!-- para borrar por completo de la base de datos -->
           <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
-            <button type="submit">
+            <button type="submit"> 
                 Borrar usuario
             </button>
             </form>
+
+            <form action="/users/logout" method="GET">
+                <button type="submit">
+                    LOGOUT
+                </button>
+                </form>
+                
+
+<% if (locals.isLogged) { %>
+ <div>esto solo se ve si el usuario esta logueado</div>
+<% } %>
+
+
 
 </main>
     

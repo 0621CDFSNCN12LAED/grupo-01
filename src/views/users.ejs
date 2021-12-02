@@ -7,9 +7,19 @@
 <body>
     
 
+    <!-- esto esta bueno para usar en el navbar -->
+    <% if (locals.isLogged) { %>
+        <div>Usuario logueado: <%= locals.userLogged.username %> </div>
+       <% } else { %>
+        <div>esto solo se ve si el usuario NO esta logueado</div>
+       <% } %>
+
+    
+    
+
     <% for (let user of users) { %>
 
-        <a href="/users/user-profile/<%= user.id %>">
+        <a href="/users/profile">
                             <article class="container articulo">
                                 <div class= "product-image"> 
                                    <!-- <img src="/images/recomendado-1.jpeg" width="100%" /> -->
