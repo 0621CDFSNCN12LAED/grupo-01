@@ -24,6 +24,7 @@ CREATE TABLE products (
     size TEXT NOT NULL,
     description TEXT NOT NULL,
     stock INT NOT NULL,
+    shipping VARCHAR(150) NOT NULL,
     deleted BIT(1) NOT NULL DEFAULT 0,
     --   verdadero 1, falso 0
     categoryId INT NOT NULL,
@@ -36,8 +37,10 @@ CREATE TABLE users (
     fullName VARCHAR(30) NOT NULL,
     username VARCHAR(30) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    birthdate DATE NULL NULL,
-    password VARCHAR(30) NOT NULL,
+    birthdate DATE NOT NULL,
+    adress VARCHAR(300) NOT NULL,
+    image VARCHAR(100) NOT NULL,
+    password VARCHAR(150) NOT NULL,
     deleted BIT(1) NOT NULL DEFAULT 0,
     rolesId INT NOT NULL,
     PRIMARY KEY (id),
@@ -89,16 +92,13 @@ VALUES
 (default, "Accesorios");
 
 
-INSERT INTO users(id, fullName, username, email, birthdate, password, deleted, rolesId)
+INSERT INTO users(id, fullName, username, email, birthdate, adress, password, deleted, rolesId)
 VALUES
-(default,"Salvador Carou","sal","salvadorcarou@gmail.com", "2200-02-20", "$2a$10$Th5CDYUB0EM2Xg88yIoGjeyIo6B6rCIy/fIK0qBvOOuYfcFGx67Z6", 0, 2);
+(default,"Salvador Carou","sal","salvadorcarou@gmail.com", "2200-02-20", "Munro", "$2a$10$Th5CDYUB0EM2Xg88yIoGjeyIo6B6rCIy/fIK0qBvOOuYfcFGx67Z6", 0, 2);
 
 INSERT INTO products
 VALUES
-(default,"Remera Negra", "image-1634588336912.jpg", 2500, 10, "medium", "Esta es una remera Negra 2.0", 5, 0, 1);
+(default,"Remera Negra", "image-1634588336912.jpg", 2500, 10, "medium", "Esta es una remera Negra 2.0", 5, "Envio-gratis", 0, 1);
 
-ALTER TABLE users ADD COLUMN image VARCHAR(100) NOT NULL;
 
-ALTER TABLE users DROP COLUMN password;
 
-ALTER TABLE users ADD COLUMN password VARCHAR(150) NOT NULL;

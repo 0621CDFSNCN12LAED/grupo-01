@@ -17,6 +17,7 @@ module.exports = (sequelize) => {
         discount: DataTypes.TINYINT,
         size: DataTypes.STRING,
         description: DataTypes.STRING,
+        shipping: DataTypes.STRING,
         stock: DataTypes.INTEGER,
         deleted: DataTypes.TINYINT,
     }

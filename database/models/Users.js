@@ -15,9 +15,11 @@ module.exports = (sequelize) => {
         username: DataTypes.STRING,
         email: DataTypes.STRING,
         birthdate: DataTypes.DATE,
+        adress: DataTypes.STRING,
         password: DataTypes.STRING,
         deleted: DataTypes.TINYINT,
         image: DataTypes.STRING
+
     }
 
     const User = sequelize.define("Users", cols,
