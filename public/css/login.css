@@ -52,6 +52,8 @@ body main {
     background-color: var(--white);
     border-radius: 1rem;
     padding: 2rem 1rem 1rem 1rem;
+    width: 100%;
+    max-width: 45rem;
 }
 
 .flex-form {
@@ -129,4 +131,25 @@ button:hover {
 .redirect-link{
     font-size: 1.3rem;
     border-bottom: blue 1px solid;
+}
+
+.box-location{
+    display: flex;
+    justify-content: center;
+}
+
+@media(min-width:768px){
+    html{
+        font-size: 68%;
+    }
+}
+
+@media (min-width:1200px){
+    .title{
+        font-size: 4rem;
+    }
+           
+    html{
+        font-size: 70%;
+    }
 }

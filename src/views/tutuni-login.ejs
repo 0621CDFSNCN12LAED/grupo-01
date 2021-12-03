@@ -12,62 +12,73 @@
         <main>
             <div class="below-head-bar">
                 <p class="title">Iniciar Sesión</p>
-                <div class="login-box">
-                    <form class="flex-form" method="POST" action="/users/login">
-                        <div class="between-space">
-                            <label for="email">Email</label>
-                            <i class="far fa-user color-icono"></i>
-                            <input
-                                class="input"
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Direccion de correo"
-                                />
-                        </div>
-                    
-                        <% if (locals.errors && errors.email) { %>
-                        <div> 
-                            <%= errors.email.msg %>  
-                        </div>  <!--para editar ese texto ir a userController/processLogin-->
-                        <% } %>
-                  
-                        <div class="m-top between-space">
-                            <label for="password"></label>
-                            <i class="fas fa-unlock color-icono"></i>
-                            <input
-                                class="input"
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="Contraseña"
-                            />  
-                            <div>
-                                <% if (locals.errors && errors.email) { %>
-                                <div> 
-                                    <%= errors.email.msg %>  
-                                </div>  <!--para editar ese texto ir a userController/processLogin-->
-                                <% } %>
+                
+                <div class="box-location">
+
+                    <div class="login-box">
+                        <form class="flex-form" method="POST" action="/users/login">
+                            <div class="between-space">
+                                <label for="email">Email</label>
+                                <i class="far fa-user color-icono"></i>
+                                <input
+                                    class="input"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Direccion de correo"
+                                    />
                             </div>
-                        </div>
+                        
+                            <% if (locals.errors && errors.email) { %>
+                            <div> 
+                                <%= errors.email.msg %>  
+                            </div>  <!--para editar ese texto ir a userController/processLogin-->
+                            <% } %>
+                      
+                            <div class="m-top between-space">
+                                <label for="password"></label>
+                                <i class="fas fa-unlock color-icono"></i>
+                                <input
+                                    class="input"
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Contraseña"
+                                />  
+                                <div>
+                                    <% if (locals.errors && errors.email) { %>
+                                    <div> 
+                                        <%= errors.email.msg %>  
+                                    </div>  <!--para editar ese texto ir a userController/processLogin-->
+                                    <% } %>
+                                </div>
+                            </div>
+        
+                            <div class="remember">   
+                                <p class="remember-text"> Recordar usuario </p>       
+                                <input  type="checkbox" name="remember_user">
+                            </div>
+                            <div class="flex-login-forgot">
+                                <button class="button" type="submit">Ingresar</button>
+                                <a class="remember-mini-text" href="/Recuperar">¿Has olvidado tu contraseña?</a>
+                            </div>
     
-                        <div class="remember">   
-                            <p class="remember-text"> Recordar usuario </p>       
-                            <input  type="checkbox" name="remember_user">
+                        </form>
+    
+                        <div class="redirect">
+                            <p class="redirect-text">¿No tienes cuenta? </p>
+                            <a class="redirect-link" href="/tutuni-register">REGISTRATE</a>
                         </div>
-                        <div class="flex-login-forgot">
-                            <button class="button" type="submit">Ingresar</button>
-                            <a class="remember-mini-text" href="/Recuperar">¿Has olvidado tu contraseña?</a>
-                        </div>
-
-                    </form>
-
-                    <div class="redirect">
-                        <p class="redirect-text">¿No tienes cuenta? </p>
-                        <a class="redirect-link" href="/tutuni-register">REGISTRATE</a>
                     </div>
+                   
+                    
+                    <!-- <div>
+                        ACA VA ESTAR LA PARTE DE LA DERECHA
+                    </div> -->
 
                 </div>
+                
+
 
                 <!-- <div class="registrarse-laptop flex-abajo">
                     <t>¿Todavia no tenes tu cuenta?</t>
@@ -78,7 +89,7 @@
                     </h2>
                     <t>De esta manera vas a poder concretar tus compras y estar habilitado para vender</t>
                 </div> -->
-      
+
                 
             </div>
             
