@@ -45,6 +45,7 @@ const lastId = allProducts.length
         size : req.body.talles,
         price : Number(req.body.price),
         discount : Number(req.body.discount),
+        shipping : req.body.shipping,
         deleted : Number(0),
         image : req.file ? req.file.filename : imageDefault,
         //envio gratis  ---   no esta agregado a la base de datos
@@ -72,6 +73,7 @@ const lastId = allProducts.length
         size : req.body.size,
         price : Number(req.body.price),
         discount : Number(req.body.discount),
+        shipping : req.body.shipping,
         deleted : Number(0),
         image : req.file ? req.file.filename : productEncontrado.image,
                 // image ? image.filename : product.image
