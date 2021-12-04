@@ -7,57 +7,92 @@
 
   <%- include("partials/header") %>
   <br />
-  <h3 class="sec-titles text-carrito">Carrito</h3>
-  <div class="container-relative"></div>
-  <body class="white">
-    <main class="body-carrito">
-      <section class="container-opciones flex">
-        <div>Item</div>
-        <div>Color</div>
-        <div>Size</div>
-        <div>Qty</div>
-        <div>Unit Price</div>
-        <div>Total</div>
-      </section>
-      <article class="descripcion">
-        <img src="/images/remera-negra.jpg" alt="" width="35px" />
-        <div>Black</div>
-        <div>L</div>
-        <div>2</div>
-        <div>1000</div>
-        <div>2000</div>
-      </article>
-      <article class="descripcion">
-        <img src="/images/pantalon.jpg" alt="" width="35px" />
-        <div>Beige</div>
-        <div>38</div>
-        <div>1</div>
-        <div>2000</div>
-        <div>2000</div>
-      </article>
-      <section class="container-envio">
-        <h2>Informacion de envio</h2>
-        <input
-          type="number"
-          name="codigo-postal"
-          id="codigo-postal"
-          class="container-envio"
-        />
-        <label for="codigo-postal">C.P.</label>
-        <div>Precio Parcial: 4000</div>
-        <div>Envio: 500</div>
-        <div>Precio Total: 4500</div>
-      </section>
-      <div class="container-promo">
-        Promo Code:
-        <input type="text" name="promo-code" id="promo-code" />
-      </div>
-      <div class="container-checkout">
-        <button type="submit" aria-placeholder="Proceder a Pagar">
-          Proceder a pagar
-        </button>
+  
+  <body class="background">
+    <main>
+      <div class="below-head-bar">
+
+        <h3 class="title">Carrito</h3>
+        <div class="carrito-box-location">
+  
+          <div class="carrito-box">
+    
+            <section class="container-opciones flex">
+              <div>Producto</div>
+              <div>Color</div>
+              <div>Size</div>
+              <div>Qty</div>
+              <div>Unit Price</div>
+              <div>Total</div>
+            </section>
+            <article class="descripcion">
+              <img src="/images/remera-negra.jpg" alt="" width="35px" />
+              <div>Black</div>
+              <div>L</div>
+              <div>2</div>
+              <div>1000</div>
+              <div>2000</div>
+            </article>
+            <article class="descripcion">
+              <img src="/images/pantalon.jpg" alt="" width="35px" />
+              <div>Beige</div>
+              <div>38</div>
+              <div>1</div>
+              <div>2000</div>
+              <div>2000</div>
+            </article>
+            <section class="container-envio">
+              <h2>Informacion de envio</h2>
+              <input
+                type="number"
+                name="codigo-postal"
+                id="codigo-postal"
+                class="container-envio"
+              />
+              <label for="codigo-postal">C.P.</label>
+              <div>Precio Parcial: 4000</div>
+              <div>Envio: 500</div>
+              <div>Precio Total: 4500</div>
+            </section>
+            <div class="container-promo">
+              Promo Code:
+              <input type="text" name="promo-code" id="promo-code" />
+            </div>
+            <div class="container-checkout">
+              <button class="button type="submit" aria-placeholder="Proceder a Pagar">
+                Proceder a pagar
+              </button>
+            </div>
+    
+          </div>
+  
+        </div>
+        
       </div>
     </main>
     <%- include("partials/footer") %>
   </body>
 </html>
+
+
+<!-- <div class="row shoppingCartItem">
+  <div class="col-6">
+      <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+          <img src=${itemImage} class="shopping-cart-image">
+          <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+      </div>
+  </div>
+  <div class="col-2">
+      <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+          <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
+      </div>
+  </div>
+  <div class="col-4">
+      <div
+          class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+          <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+              value="1">
+          <button class="btn btn-danger buttonDelete" type="button">X</button>
+      </div>
+  </div>
+</div>`; -->

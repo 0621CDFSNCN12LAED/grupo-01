@@ -1,16 +1,120 @@
+:root{
+  --main-color:rgb(140, 240, 140);
+  --white: rgb(255, 255, 255);
+  --grey: rgb(230, 222, 222);
+  --black:#13131a;
+  --bg:#010103;
+}
+
+*{
+  font-family: 'Montserrat';
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  outline: none;
+  border:none;
+  text-decoration: none;
+  /* text-transform: capitalize; */
+  transition: .2s linear;
+}
+     
+html{
+  font-size: 62.5%;
+  /* Snook trick so rem looks easier to know the amount
+  1rem = 10px  1,4rem = 14px */
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+.background{
+  background:url(../images/fondo-verde-mobile.jpg) no-repeat;
+  background-size: cover;
+}
+
+.below-head-bar{
+  margin: 9.5rem 0 13rem;
+}
+
+main {
+  margin:3rem;
+}
+
+.title{
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+
+.carrito-box-location{
+  display: flex;
+  justify-content: center;
+}
+
+.carrito-box{
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
+  width: 100%;
+  max-width: 90rem;
+}
+
+
+.button {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  background-color: #1477b2;
+  color: var(--white);
+  font-weight: 500;
+  height: 3rem;
+  width: 20rem;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+/* Hasta aca correción Mati */
+
+
+
+
+
+
+
+
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* CARRITO DE COMPRAS */
 .container-opciones {
-  background-color: black;
-  color: #c4c4c4;
+  color: var(--black);
   font-size: 13px;
   margin-top: 10px;
   padding: 10px;
 }
 
 .container-envio {
-  background-color: black;
-  color: #c4c4c4;
-  font-size: 50%;
+  color: var(--black);
+  font-size: 1.5rem;
   margin-top: 10px;
   text-align: center;
 }
@@ -21,26 +125,22 @@
   padding-top: 10px;
 }
 .container-envio input {
-  background-color: black;
+
   color: #c4c4c4;
   text-align: left;
 }
 .container-checkout {
   margin-top: 15px;
-  float: right;
-  display: inline-block;
-  padding: 10px;
-  background-color: black;
   color: #c4c4c4;
-  font-size: 50%;
+  font-size: 1.4rem;
 }
 .container-promo {
-  margin-top: 35px;
+  margin-top: 3rem;
   display: inline-block;
-  padding: 10px;
-  background-color: black;
-  color: #c4c4c4;
-  font-size: 50%;
+  padding: 0.5rem;
+  color: var(--black);
+  font-size: 1.4rem;
+  border: 1px solid black;
 }
 
 .descripcion {
@@ -61,20 +161,37 @@
   margin-top: 60px;
 }
 
-.body-carrito {
-  margin: 55px 35px 0;
-}
-.text-carrito {
-  text-align: center;
-  margin-top: 80px;
+.carrito-container {
+  margin: 0 5rem;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+
+/* ESTO ES UNA PRUEBA  */
+
+.shopping-cart-items {
+  padding: 20px 0px;
 }
 
-.white {
-  background-color: white;
+.shopping-cart-header {
+  border-bottom: 1px solid #ccc;
 }
+
+.shopping-cart-image {
+  max-width: 80px;
+  border-radius: 20px;
+}
+
+.shopping-cart-quantity-input {
+  max-width: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #eee;
+  padding: 5px;
+}
+
+.shopping-cart-total {
+  min-height: 96px;
+}
+
+
