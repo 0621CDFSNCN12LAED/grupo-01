@@ -32,35 +32,90 @@ html{
   background-size: cover;
 }
 
-.below-head-bar{
-  margin: 9.5rem 0 13rem;
-}
-
 main {
   margin:3rem;
+}
+
+.below-head-bar{
+  margin: 9.5rem 0 13rem;
 }
 
 .title{
   font-size: 3rem;
   font-weight: 700;
-  margin: 0 0 2rem 0;
   text-align: center;
 }
 
-
-.carrito-box-location{
+.cart-box-location{
   display: flex;
   justify-content: center;
 }
 
-.carrito-box{
+.cart-box{
   background-color: var(--white);
   border-radius: 1rem;
   padding: 2rem 1rem 1rem 1rem;
   width: 100%;
   max-width: 90rem;
+  margin: 4rem auto;
 }
 
+.cart-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.m-2{
+  margin: 0 1rem 1rem 1rem;
+}
+
+.cart-flex .title{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.color{
+  background-color: rgb(240, 238, 234);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.cart-info img{
+  width: 10rem;
+  height: 10rem;
+}
+
+.cart-info p{
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.cart-info a{
+  font-size: 1.4rem;
+}
+
+.cart-flex input{
+  width: 5rem;
+  margin-right: 2rem;
+}
+
+.article-price{
+  font-size: 2rem;
+}
+
+.container-envio {
+  color: var(--black);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.button-location{
+  display: flex;
+  justify-content: center;
+}
 
 .button {
   border-radius: 1rem;
@@ -71,6 +126,7 @@ main {
   font-weight: 500;
   height: 3rem;
   width: 20rem;
+  margin-top: 1.5rem;
 }
 
 button:hover {
@@ -80,118 +136,47 @@ button:hover {
 /* Hasta aca correción Mati */
 
 
+@media(min-width:600px){
 
+  .m-2{
+    margin: 0 1.5rem 1.5rem 1.5rem;
+  }
 
+  .cart-flex .title{
+    font-size: 1.8rem;
+  }
 
+  .cart-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
+  .cart-info p{
+    font-size: 1.6rem;
+    text-align:left;
+    margin-left: 1rem;
+  }
 
+  .cart-info a{
+    margin-left: 1rem;
+  }
 
+  .cart-flex input{
+    margin-right: 14rem;
+  }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+  .pay-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-/* CARRITO DE COMPRAS */
-.container-opciones {
-  color: var(--black);
-  font-size: 13px;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-.container-envio {
-  color: var(--black);
-  font-size: 1.5rem;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.container-envio h2 {
-  text-align: center;
-  margin-bottom: 0;
-  padding-top: 10px;
-}
-.container-envio input {
-
-  color: #c4c4c4;
-  text-align: left;
-}
-.container-checkout {
-  margin-top: 15px;
-  color: #c4c4c4;
-  font-size: 1.4rem;
-}
-.container-promo {
-  margin-top: 3rem;
-  display: inline-block;
-  padding: 0.5rem;
-  color: var(--black);
-  font-size: 1.4rem;
-  border: 1px solid black;
-}
-
-.descripcion {
-  font-size: 13px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-}
-
-.flex-colum {
-  display: flex;
-  flex-direction: column;
-}
-
-.contenedor-footer {
-  text-align: center;
-  margin-top: 60px;
-}
-
-.carrito-container {
-  margin: 0 5rem;
-}
-
-
-
-/* ESTO ES UNA PRUEBA  */
-
-.shopping-cart-items {
-  padding: 20px 0px;
-}
-
-.shopping-cart-header {
-  border-bottom: 1px solid #ccc;
-}
-
-.shopping-cart-image {
-  max-width: 80px;
-  border-radius: 20px;
-}
-
-.shopping-cart-quantity-input {
-  max-width: 45px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #eee;
-  padding: 5px;
-}
-
-.shopping-cart-total {
-  min-height: 96px;
-}
-
-
+  .button {
+    margin-top: 0rem;
+  }
+  
+  .background{
+    background:url(../images/fondo-verde-desktop.jpg) no-repeat;
+  }
+}  
