@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <!--El head-->
-    <%- include ("partials/head.ejs") %>
-    <!-- <link rel="stylesheet" href="/css/createProduct.css"> -->
+        <%- include ("partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/product-detail.css">
+        <script defer src="/js/cart.js"></script>
     </head>
     <!--El head-->
     <body class="background">
         <%- include ("partials/header.ejs") %>
     <!--</body>-->
     
-    <link rel="stylesheet" href="/css/product-detail.css">
+
     <main class="below-head-bar">
 
         <div>
-            <div class="product-title"> <%= elegido.name %> </div>
+            <div class="product-title cart-product-name"><%= elegido.name %></div>
         </div>
 
         <section class="images">
@@ -34,7 +35,7 @@
                 </div>
                 <div class="main-image-container">
                     <div class="main-image">
-                        <img  src="/../images/productos/<%= elegido.image %>" alt="image" width="100%" class="product-image">
+                        <img class="cart-product-image" src="/../images/productos/<%= elegido.image %>" alt="image" width="100%" class="product-image">
                     </div>
                 </div>
             </div>
@@ -60,7 +61,7 @@
             <div>
                 <p class="product-price tachado">$<%= elegido.price %> </p>
                 <div class="same-line">
-                    <p class="product-price-discount">$ <%= elegido.price - (elegido.price * (elegido.discount/100)) %>  </p>
+                    <p class="product-price-discount cart-product-final-price">$<%= elegido.price - (elegido.price * (elegido.discount/100)) %>  </p>
                     <p class="discount"> <%= elegido.discount %>%  OFF</p>
                 </div>
             </div>
@@ -78,7 +79,7 @@
         </section>
 
         <section class="article-info">
-            <div>
+            <div class="cart-product">
                 <p class="info-title">Información del Producto</p>
                 <p class="info-subtitle"> Categoría</p>
                 <p class="article-data"><%= elegido.category.categoryName %></p>
