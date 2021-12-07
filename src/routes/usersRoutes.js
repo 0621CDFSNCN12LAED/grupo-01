@@ -32,7 +32,7 @@ router.get("/profile/edit", authMiddleware, usersController.edit);
 router.put("/profile/editado", configMulter.single('avatar'), usersController.update);
 
 // Logout
-router.get('/logout/', usersController.logout);
+router.get('/logout', usersController.logout);
 
 // Listado de usuarios
 router.get('/', usersController.index)
@@ -40,6 +40,10 @@ router.get('/', usersController.index)
 // Borrar usuarios (mas que nada para probar)
 router.delete("/delete/:id", usersController.destroy);
 
-router.get('/logout', usersController.logout)
+
+// Likes
+router.get('/profile/likes', usersController.likes)
+router.get('/profile/likes/:id', usersController.addLike)
+router.get('/profile/likes/delete/:id', usersController.deleteLike)
 
 module.exports = router;

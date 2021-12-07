@@ -168,6 +168,34 @@ const controller = {
             where: {id: req.params.id}
         })
         res.redirect('/users')
+    },
+
+    likes: async (req, res) => {
+        const user = await db.Users.findByPk( req.session.userLogged.id, {include: ["products"]})
+        
+        res.render("userLikes", { user })
+
+    },
+
+    addLike: async (req, res) => {
+  
+        await db.Product_user_fav.create({
+            userId: req.session.userLogged.id,
+            productId: req.params.id
+        })
+        
+    res.redirect("/products", )
+    },
+
+    deleteLike: async (req, res) => {
+        await db.Product_user_fav.destroy({
+            where: {
+                productId: req.params.id
+            }
+        })
+    const user = await db.Users.findByPk( req.session.userLogged.id, {include: ["products"]})
+
+    res.render("userLikes", { user })
     }
 }
 
