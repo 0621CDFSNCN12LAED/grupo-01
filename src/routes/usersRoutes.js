@@ -42,8 +42,8 @@ router.delete("/delete/:id", usersController.destroy);
 
 
 // Likes
-router.get('/profile/likes', usersController.likes)
-router.get('/profile/likes/:id', usersController.addLike)
-router.get('/profile/likes/delete/:id', usersController.deleteLike)
+router.get('/profile/likes', authMiddleware, usersController.likes)
+router.get('/profile/likes/:id', authMiddleware, usersController.addLike)
+router.get('/profile/likes/delete/:id', authMiddleware, usersController.deleteLike)
 
 module.exports = router;
