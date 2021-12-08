@@ -1,0 +1,57 @@
+:root{
+    --main-color:rgb(140, 240, 140);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 222, 222);
+    --black:#13131a;
+    --bg:#010103;
+  }
+  
+*{
+    font-family: 'Montserrat';
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: .2s linear;
+}
+       
+html{
+    font-size: 62.5%;
+    /* Snook trick so rem looks easier to know the amount
+    1rem = 10px  1,4rem = 14px */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+  
+.background{
+    background:url(../images/fondo-verde-mobile.jpg) no-repeat;
+    background-size: cover;
+}
+  
+main {
+    margin:3rem;
+}
+  
+.below-head-bar{
+    margin: 9.5rem 0 13rem;
+}
+
+.product-image {
+    /* border: 1px solid black; */
+    width: 13.5rem;
+    height: 12rem;
+    border-radius: 1.5rem;
+    margin-left: 1rem;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.product-image img{
+    border-radius: 1.5rem;
+}
+

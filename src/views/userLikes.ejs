@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include ("partials/head.ejs") %>
-    <title>Favoritos</title>
-</head>
-<body>
 
-    <%- include ("partials/header.ejs") %>
+        <%- include ("partials/head.ejs") %>
+        <!-- <link rel="stylesheet" href="/css/userLikes.css" /> -->
+        <link rel="stylesheet" href="/css/userLikes.css">
+    </head>
 
-<br><br><br><br><br><br><br><br><br><br>
-    <% if (user.products[0]) { %> 
-    <% for (let product of user.products) { %> 
-        <li>
-        <%= product.name %> ---- <a href="/users/profile/likes/delete/<%= product.id %> "><button>borrar</button></a>
-        </li>
-        <% } %> 
-        <% } else { %>
+    
+    <%- include ("partials/header") %>
+    <body class="background">
+        <main>
 
-            No tenes likes
+            <div class="below-head-bar">
+                
+                <% if (user.products[0]) { %> 
+                <% for (let product of user.products) { %> 
+                    <li>
+                        <div class= "product-image"> 
+                             <img src="/../images/productos/<%= product.image %>" alt="imagen" width="100%" />                    
+                         </div>
+                    <%= product.name %> ---- <a href="/users/profile/likes/delete/<%= product.id %> "><button>borrar</button></a>
+                    
+                    </li>
+                    <% } %> 
+                    <% } else { %>
+        
+                        No tenes likes
+        
+                        <% } %> 
+        
+                    <a href="/users/profile">ir a tu perfil</a>
 
-            <% } %> 
+            </div>
+        </main>
+    </body>
 
-            
-            <br><br><br><br><br><br><br>
-
-        <a href="/users/profile">ir a tu perfil</a>
-
-
-</body>
 </html>
