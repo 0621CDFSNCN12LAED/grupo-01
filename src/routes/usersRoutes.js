@@ -40,7 +40,6 @@ router.get('/', usersController.index)
 // Borrar usuarios (mas que nada para probar)
 router.delete("/delete/:id", usersController.destroy);
 
-
 // Likes
 router.get('/profile/likes', authMiddleware, usersController.likes)
 router.get('/profile/likes/:id', authMiddleware, usersController.addLike)

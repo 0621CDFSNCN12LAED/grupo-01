@@ -35,10 +35,13 @@ app.set("views", path.join(__dirname, "./views"));
 const indexRouter = require("./routes/index");
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/usersRoutes')
+const cartRouter = require('./routes/cartRoutes')
 
+// Uso de rutas
 app.use("/", indexRouter);
 app.use("/products",productsRouter);
 app.use("/users", usersRouter);
+app.use("/carrito", cartRouter);
 
 // Cargando el servidor
 app.listen(3000, () => console.log("Servidor esta corriendo"));

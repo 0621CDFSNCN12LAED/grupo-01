@@ -10,9 +10,6 @@ const userService = require("../services/userService");
 const { validationResult } = require("express-validator");
 const { Console } = require("console");
 
-
-// completar
-
 const controller = {
     register: (req, res) => {
 		res.render("tutuni-register");
@@ -172,18 +169,14 @@ const controller = {
 
     likes: async (req, res) => {
         const user = await db.Users.findByPk( req.session.userLogged.id, {include: ["products"]})
-        
         res.render("userLikes", { user })
-
     },
 
     addLike: async (req, res) => {
-  
         await db.Product_user_fav.create({
             userId: req.session.userLogged.id,
             productId: req.params.id
-        })
-        
+        })   
     res.redirect("/products", )
     },
 
@@ -195,7 +188,7 @@ const controller = {
         })
     const user = await db.Users.findByPk( req.session.userLogged.id, {include: ["products"]})
 
-    res.render("userLikes", { user })
+    res.redirect("/users/profile/likes")
     }
 }
 

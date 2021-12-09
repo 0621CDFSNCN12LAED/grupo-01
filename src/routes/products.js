@@ -6,6 +6,7 @@ const path = require("path");
 const configMulter = require("../middlewares/productMulter")
 
 const productsController = require("../controllers/productsController");
+const authMiddleware = require("../middlewares/authMiddleware")
 
 
 
@@ -16,14 +17,14 @@ router.get("/", productsController.index);
 router.get("/detail/:id", productsController.detail);
 
 
-router.get("/create", productsController.create); //Showform
+router.get("/create", authMiddleware, productsController.create); //Showform
 router.post("/create", configMulter.single("image"), productsController.store);
 
 
-router.get("/edit/:id", productsController.edit);
+router.get("/edit/:id", authMiddleware, productsController.edit);
 router.put("/edit/:id", configMulter.single("image"), productsController.update);
 
 //Eliminar producto
-router.delete("/delete/:id", productsController.destroy);
+router.delete("/delete/:id", authMiddleware, productsController.destroy);
 
 module.exports = router;
