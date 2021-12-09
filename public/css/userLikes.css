@@ -40,14 +40,33 @@ main {
     margin: 9.5rem 0 13rem;
 }
 
+.fav-page-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container-product-fav{
+    background-color: rgb(240, 238, 234);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 25rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
 .product-image {
     /* border: 1px solid black; */
-    width: 13.5rem;
-    height: 12rem;
+    width: 20.25rem;
+    height: 18rem;
     border-radius: 1.5rem;
     margin-left: 1rem;
     display: flex;
-    /* align-items: center; */
+
     justify-content: center;
 }
 
@@ -55,3 +74,63 @@ main {
     border-radius: 1.5rem;
 }
 
+.fav-name{
+    font-size: 2rem;
+}
+
+.fav-button-delete{
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  background-color: #1477b2;
+  color: var(--white);
+  font-weight: 500;
+  height: 3rem;
+  width: 10rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fav-button-delete:hover {
+  background-color: darkblue;
+}
+
+
+.fav-button-delete a{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.fav-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.same-line{
+    display: flex;
+    align-items: center;
+}
+
+.product-price-discount{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.discount{
+    font-size: 1.5rem;
+    color: rgb(18, 145, 52);
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
+
+@media (min-width:1164px){
+    .background{
+        background:url(../images/fondo-verde-desktop.jpg) no-repeat;
+        background-position: center;
+    }
+}

@@ -12,26 +12,41 @@
         <main>
 
             <div class="below-head-bar">
+                <div class="fav-page-container">
                 
+
                 <% if (user.products[0]) { %> 
                 <% for (let product of user.products) { %> 
-                    <li>
-                        <div class= "product-image"> 
-                             <img src="/../images/productos/<%= product.image %>" alt="imagen" width="100%" />                    
-                         </div>
-                    <%= product.name %> ---- <a href="/users/profile/likes/delete/<%= product.id %> "><button>borrar</button></a>
-                    
-                    </li>
-                    <% } %> 
-                    <% } else { %>
-        
-                        No tenes likes
-        
-                        <% } %> 
-        
-                    <a href="/users/profile">ir a tu perfil</a>
 
+
+                        <div class="container-product-fav">
+                            <div class= "product-image"> 
+                                 <img src="/../images/productos/<%= product.image %>" alt="imagen" width="100%" />                    
+                             </div>
+                             <div class="fav-info">
+                                 <div class="fav-name"> <%= product.name %> </div>
+                                 <div class="same-line">
+                                    <p class="product-price-discount">$ <%= product.price - (product.price * (product.discount/100)) %> </p>
+                                    <p class="discount"> <%= product.discount %>%  OFF</p>
+                                </div>
+                                 <div class="fav-button-delete">
+                                     <a href="/users/profile/likes/delete/<%= product.id %> ">
+                                         Borrar
+                                     </a>
+                                 </div>
+                             </div>
+
+                        </div>
+                        <% } %> 
+                        <% } else { %>
+            
+                            No tenes likes
+            
+                            <% } %> 
+                </div>
             </div>
+
+            <a href="/users/profile">Ir a tu perfil</a>
         </main>
     </body>
 
