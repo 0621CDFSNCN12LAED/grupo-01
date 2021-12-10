@@ -1,12 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const { monitorEventLoopDelay } = require("perf_hooks");
 const db = require("../../database/models/index");
-const Products = require("../../database/models/Products");
 const imageDefault =  "imagenDefault.png"
-// const multer = require("multer");
-// const { monitorEventLoopDelay } = require("perf_hooks");
-// const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const appService = require("../services/appService");
 
@@ -99,14 +94,3 @@ const lastId = allProducts.length
 };
 
 module.exports = controller;
-
-
-  // destroy: (req, res) => {
-  //   let productIndex = products.findIndex(function(product) {
-  //     return product.id == req.params.id
-  // })
-  //     products.splice(productIndex, 1)
-  //     writeJson()
-  //     res.redirect("/products")
-
-  // }

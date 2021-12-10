@@ -4,16 +4,18 @@ const db = require("../../database/models/index");
 const controller = {
     list: async (req, res) => {
         const user = await db.Users.findByPk(req.session.userLogged.id);
-        const e = await db.Carts.findOne({where: {userId: user.id}});
+        const e = await db.Carts.findOne({where: {userId: user.id,  status : "in-p" } });
+        console.log(e)
 
         if (e) {
         const cart = await db.Carts.findByPk(e.id,{ include: ["products"]} )
         const suma = [0]
-        console.log(cart.userId)
-        res.render("carrito", { cart, suma })
+        res.render("carrito", { cart, e })
 
 } else {
-    res.send("NO TENES CARRITO")
+    // res.send("NO TENES CARRITO")
+    const cart = undefined
+    res.render("carrito", { cart, e })
 }
     },
     add: async (req, res) => {
@@ -60,7 +62,7 @@ const controller = {
             })
 
     } else {
-        res.send("problemas")
+        res.redirect("/products")
     }
     res.redirect("/products")
 
@@ -72,7 +74,6 @@ const controller = {
     },
 
     shop: async (req, res) => {
-        res.send(req.body)
 
         await db.Carts.update({
             status: "bought"
