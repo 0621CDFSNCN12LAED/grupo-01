@@ -7,6 +7,7 @@ const configMulter = require("../middlewares/productMulter")
 
 const productsController = require("../controllers/productsController");
 const authMiddleware = require("../middlewares/authMiddleware")
+const adminMiddleware = require("../middlewares/adminMiddleware")
 
 
 
@@ -17,7 +18,7 @@ router.get("/", productsController.index);
 router.get("/detail/:id", productsController.detail);
 
 
-router.get("/create", authMiddleware, productsController.create); //Showform
+router.get("/create", adminMiddleware, authMiddleware, productsController.create); //Showform
 router.post("/create", configMulter.single("image"), productsController.store);
 
 

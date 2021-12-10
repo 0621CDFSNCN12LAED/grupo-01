@@ -3,12 +3,8 @@ const db = require("../../database/models/index");
 
 const controller = {
     list: async (req, res) => {
-        const user = await db.Users.findByPk(req.session.userLogged.id)
-        const e = await db.Carts.findOne({where: {userId: user.id}})
-  
-        // const cart = await db.Carts.findByPk(e.id,{ include: ["products"]} )
-        
-        // const cart = await db.Carts.findAll({ include: ["products"]}, {where : {userId : req.session.userLogged.id}})
+        const user = await db.Users.findByPk(req.session.userLogged.id);
+        const e = await db.Carts.findOne({where: {userId: user.id}});
 
         if (e) {
         const cart = await db.Carts.findByPk(e.id,{ include: ["products"]} )
@@ -67,8 +63,30 @@ const controller = {
         res.send("problemas")
     }
     res.redirect("/products")
+
+    },
+
+    delete: async (req, res) => {
+        await db.Cart_product.destroy({where : { productId : req.params.id }})
+        res.redirect("/carrito")
+    },
+
+    shop: async (req, res) => {
+        res.send(req.body)
+
+        await db.Carts.update({
+            status: "bought"
+        }, {
+            where: {
+                userId : req.session.userLogged.id
+            }
+        })
+
+        res.redirect("/carrito")
     }
 
 }
+
+
 
 module.exports = controller

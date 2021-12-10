@@ -22,7 +22,8 @@
                             <p class="title">Unidades</p>
                             <p class="title">Precio</p>
                         </div>
-
+                    
+                    <% if (e && cart ) { %> 
                         <% for (let product of cart.products) { %> 
 
                         <div class="cart-product-container">
@@ -31,32 +32,35 @@
                                     <img src="../images/productos/<%= product.image %> ">
                                     <div>
                                         <p><%= product.name %></p>
-                                        <a href="">Quitar</a>
+                                        <form action="/carrito/borrar/<%= product.id %>?_method=DELETE" method="POST">
+                                            <button type="submit">Quitar</button></form>
+                                        <!-- <a href="/carrito/borrar/<%= product.id %>">Quitar</a> -->
                                     </div>
                                 </div>
-                                <input type="number" value="1">
+                                <input id="stock" type="number" value="1">
                                 <p class="article-price"><%= product.price %> </p>
                             </div>
                         </div>
-
                          
-
                         <% } %> 
+                        <% } else { %> 
 
-                        
-                        
+                            No tenes productos en el carrito
+
+                            <% } %> 
+                     
                         <section class="container-envio">
                             <h2>Informacion de envio</h2>
-                            <!-- <div>Precio Parcial: 4000</div>
+                            <!-- <!-- <div>Precio Parcial: 4000</div>
                             <div>Envio: 500</div> -->
-                            <!-- <div>Precio Total: <% for (let product of cart.products) { suma.push(product.price)  %>
-                                <%= suma[2] %>
-                                <% } %> </div> -->
+                            <!-- <div>Precio Total:  -->
                         </section>
                         <div class="button-location">
+                            <form action="/carrito/comprar?_method=PUT" enctype="multipart/form-data" method="POST">
                             <button class="button" type="submit" placeholder="Proceder a Pagar">
                                 Proceder a pagar
                             </button>
+                        </form>
                         </div>
 
                     </div>

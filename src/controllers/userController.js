@@ -47,6 +47,7 @@ const controller = {
             fullName : req.body.name,
             username : req.body.username,
             email : req.body.email,
+            adress: req.body.adress,
             birthdate : req.body.birthdate,
             password: bcryptjs.hashSync(req.body.password, 10),          
             // confirmPassword: bcryptjs.hashSync(req.body.password, 10),

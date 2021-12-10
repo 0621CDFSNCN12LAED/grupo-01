@@ -11,4 +11,10 @@ router.get("/", authMiddleware, cartController.list);
 // Si no tenes carrito crearlo, y agregar productos
 router.get('/agregar/:id', authMiddleware, cartController.add)
 
+// Borrar producto del carrito
+router.delete("/borrar/:id", authMiddleware, cartController.delete)
+
+// Procesar cobro
+router.put("/comprar", authMiddleware, cartController.shop)
+
 module.exports = router;
