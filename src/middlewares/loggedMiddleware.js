@@ -19,8 +19,6 @@ if (req.cookies.userEmail) {
         res.locals.userLogged = req.session.userLogged
     }
 
-    
-
     next();
 }
 

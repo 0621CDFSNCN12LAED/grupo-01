@@ -10,7 +10,11 @@
           <li><a href="/users/login">Login</a></li>
           <li><a href="/users/register">Crear Cuenta</a></li>
           <li><a href="/products">Productos</a></li>
-          <li><a href="/products/create">Crear Productos</a></li>
+          <% if (locals.userLogged) { %> 
+            <% if (locals.userLogged.rolesId == 2) { %> 
+         <li><a href="/products/create">Crear Productos</a></li>
+         <% } %>
+         <% } %> 
         </ul>
     </div>
      <!-- PROBANDO LA BARRA LATERAL DEL BURGUER -->

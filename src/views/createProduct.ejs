@@ -214,6 +214,9 @@
             <div class="description">
                 <label for="description" class="create-letter white">Descripción</label>
                 <div class="position-area">
+                    <% if (locals.errors && errors.description) { %>
+                        <%= errors.description.msg %>
+                        <% } %> 
                     <textarea
                         name="description"
                         id="description"

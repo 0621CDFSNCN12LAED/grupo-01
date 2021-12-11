@@ -1,7 +1,7 @@
 const path = require("path");
 const { body } = require('express-validator');
 
-const validations = [
+const editValidations = [
     body('name')
         .notEmpty()
         .withMessage("Debes completar el campo") 
@@ -34,12 +34,6 @@ const validations = [
         .bail()
         .isLength({min:4, max:20})
         .withMessage("Malisima, muy corta.. o muy larga"),
-    body('confirmPassword')
-        .notEmpty()
-        .withMessage("Debes completar el campo")
-        .bail()
-        .isLength({min:4, max:20})
-        .withMessage("No sirve"),
     // body('avatar').custom((value, { req }) => {
     //     let acepted = ['.jpeg', '.png', '.gif'];
     //     let fileExtension = path.extname(file.originalname);
@@ -52,4 +46,4 @@ const validations = [
     // })                     no estaria funcionando bien
 ]
 
-module.exports = validations
+module.exports = editValidations

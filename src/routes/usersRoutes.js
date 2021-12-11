@@ -9,6 +9,9 @@ const usersController = require('../controllers/userController');
 // Middlewares
 const configMulter = require("../middlewares/userMulter");
 const validations = require("../middlewares/usersValidator");
+const loginValidations = require("../middlewares/userLoginValidator");
+const editUserValidation = require("../middlewares/userEditValidation")
+
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
 
@@ -22,14 +25,14 @@ router.post('/register', configMulter.single('avatar'), validations, usersContro
 router.get('/login', guestMiddleware, usersController.login);
 
 // Procesando el login
-router.post('/login', usersController.processLogin);
+router.post('/login', loginValidations, usersController.processLogin);
 
 // Perfil Usuario
 router.get('/profile', authMiddleware, usersController.profile);
 
 // Editar usuario
 router.get("/profile/edit", authMiddleware, usersController.edit);
-router.put("/profile/editado", configMulter.single('avatar'), usersController.update);
+router.put("/profile/editado", configMulter.single('avatar'), editUserValidation, usersController.update);
 
 // Logout
 router.get('/logout', usersController.logout);

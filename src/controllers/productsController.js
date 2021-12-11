@@ -4,6 +4,7 @@ const db = require("../../database/models/index");
 const imageDefault =  "imagenDefault.png"
 
 const appService = require("../services/appService");
+const { validationResult } = require("express-validator");
 
 const controller = {
 
@@ -27,8 +28,21 @@ const controller = {
   },
 
   store: async (req, res) => {
-    //prueba para sacar el id - chequear mas adelante
-const allProducts = await db.Products.findAll()
+
+    const resultValidation = validationResult(req)
+    const categories = await db.Categories.findAll();
+
+    if (resultValidation.errors.length > 0) {
+      res.render("createProduct", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          categories
+      })
+  }
+    
+
+ if (resultValidation.errors.length == 0) {
+  const allProducts = await db.Products.findAll()
 const lastId = allProducts.length
 
     await db.Products.create(
@@ -49,7 +63,8 @@ const lastId = allProducts.length
       }
     )
     res.redirect("/products");
-  },
+  }
+},
 
   // Update 
   edit: async (req, res) => {

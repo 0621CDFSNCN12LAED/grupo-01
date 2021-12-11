@@ -44,17 +44,26 @@
     <form class="flex-form-re" action="/users/profile/editado?_method=PUT" method="POST" enctype="multipart/form-data">
         
         <div> 
-            <label for="fullName">Nombre y apellido</label>         
+            <label for="fullName">Nombre y apellido</label>       
+            <% if (locals.errors && errors.fullName) { %>
+                <%= errors.fullName.msg %>
+                <% } %>    
             <input type="text" name="fullName" id="fullName" value="<%=  locals.oldData ? oldData.fullName : user.fullName %>">
          
         </div>
         <div>
-            <label for="username">Nombre de usuario</label>       
+            <label for="username">Nombre de usuario</label>
+            <% if (locals.errors && errors.username) { %>
+                <%= errors.username.msg %>
+                <% } %>     
             <input type="text" name="username" id="username" value="<%= locals.oldData ? oldData.username :  user.username %>">
         </div>
 
         <div>
-            <label for="email">Direccion de correo electronico</label>          
+            <label for="email">Direccion de correo electronico</label>
+            <% if (locals.errors && errors.email) { %>
+                <%= errors.email.msg %>
+                <% } %>           
             <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email :  user.email %>">
             
         </div>
@@ -66,12 +75,18 @@
 
         </div>
         <div>
-            <label for="birthdate">Fecha de nacimiento</label>           
+            <label for="birthdate">Fecha de nacimiento</label>    
+            <% if (locals.errors && errors.birthdate) { %>
+                <%= errors.birthdate.msg %>
+                <% } %>          
             <input type="date" name="birthdate" id="birthdate" value="<%= locals.oldData ? oldData.birthdate :  user.birthdate %>"> 
         </div>
         <div>
-            <label for="adress">Domicilio</label>            
-            <input type="text" name="adress" id="adress" value="No lo tenemos en la db"> 
+            <label for="adress">Domicilio</label>  
+            <% if (locals.errors && errors.adress) { %>
+                <%= errors.adress.msg %>
+                <% } %>             
+            <input type="text" name="adress" id="adress" value="<%= locals.oldData ? oldData.adress :  user.adress %>"> 
         </div>
         
         

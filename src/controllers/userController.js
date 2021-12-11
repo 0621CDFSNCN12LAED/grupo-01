@@ -8,7 +8,6 @@ const bcryptjs = require("bcryptjs");
 
 const userService = require("../services/userService");
 const { validationResult } = require("express-validator");
-const { Console } = require("console");
 
 const controller = {
     register: (req, res) => {
@@ -29,7 +28,6 @@ const controller = {
         })
         
         if (userInModel.length > 0) {
-            console.log(userInModel)
                 return res.render("tutuni-register", {
                     errors: {
                         email: {
@@ -38,7 +36,19 @@ const controller = {
                     },
                     oldData: req.body
                 })
-        } else {
+            }
+
+        if (req.body.password !== req.body.confirmPassword) {
+            return res.render("tutuni-register", {
+                errors: {
+                    confirmPassword: {
+                        msg: "Escribiste mal la contraseña"
+                    }
+                },
+                oldData: req.body   
+            })
+
+        } if (resultValidation.errors.length == 0) {
 
         const biggestId = await db.Users.max("id")
         await db.Users.create({ 
@@ -55,6 +65,8 @@ const controller = {
             rolesId : 1
         })
         res.redirect("/tutuni-login")
+        } else {
+            res.send("Problemas")
         }
         
     
@@ -101,8 +113,6 @@ const controller = {
     },
 
     profile: async (req, res) => {
-        
-        // const user = await db.Users.findByPk(req.params.id); vamos a usar el session
         res.render('user-detail', { user: req.session.userLogged })
     },
 
@@ -111,17 +121,21 @@ const controller = {
     },
 
     update: async (req, res) => {
+        const resultValidation = validationResult(req)
 
        const userFound = await db.Users.findOne({ where: { id: req.session.userLogged.id}});
         const correctPassword = bcryptjs.compareSync(req.body.password, userFound.password) 
         const oldData = req.body
+        console.log(resultValidation)
+        console.log("aparte")
         console.log(oldData)
-        if (correctPassword) {
+        if (correctPassword && (resultValidation.error == null)) {
             
     await db.Users.update({
         image : req.file ? req.file.filename : userFound.image,
         fullName : req.body.fullName,
         username : req.body.username,
+        adress: req.body.adress,
         email : req.body.email,
         birthdate : req.body.birthdate,
         }, {
@@ -134,15 +148,10 @@ const controller = {
         } else {
             
             // res.redirect("/users/profile/edit", { oldData: req.body }
-            res.render("userEdit", { oldData: oldData, user: req.session.userLogged }
-            // ,
-            // {
-            //     errors: {
-            //         password: {
-            //             msg: 'Esta mal'
-            //         }
-            //     }
-            // }
+            res.render("userEdit", { oldData: oldData, user: req.session.userLogged,  
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            }
             )
         }
     },
