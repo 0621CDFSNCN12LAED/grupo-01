@@ -116,3 +116,11 @@ button:hover {
     font-size: 1.5rem;
     border-bottom: blue 1px solid;
 }
+
+.is-valid {
+    border-color: green
+}
+
+.is.invalid {
+    border-color: red
+}

@@ -60,7 +60,6 @@ const controller = {
             adress: req.body.adress,
             birthdate : req.body.birthdate,
             password: bcryptjs.hashSync(req.body.password, 10),          
-            // confirmPassword: bcryptjs.hashSync(req.body.password, 10),
             deleted : Number(0),
             rolesId : 1
         })

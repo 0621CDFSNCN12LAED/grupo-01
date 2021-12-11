@@ -8,6 +8,7 @@ const path = require("path");
 const usersController = require('../controllers/userController');
 // Middlewares
 const configMulter = require("../middlewares/userMulter");
+const adminValidator = require("../middlewares/adminMiddleware")
 const validations = require("../middlewares/usersValidator");
 const loginValidations = require("../middlewares/userLoginValidator");
 const editUserValidation = require("../middlewares/userEditValidation")
@@ -38,7 +39,7 @@ router.put("/profile/editado", configMulter.single('avatar'), editUserValidation
 router.get('/logout', usersController.logout);
 
 // Listado de usuarios
-router.get('/', usersController.index)
+router.get('/', adminValidator, usersController.index)
 
 // Borrar usuarios (mas que nada para probar)
 router.delete("/delete/:id", usersController.destroy);
