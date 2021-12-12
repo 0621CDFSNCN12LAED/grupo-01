@@ -29,7 +29,7 @@ router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processLogin);
 
 // Perfil Usuario
-router.get('/profile', authMiddleware, usersController.profile);
+router.get('/profile', configMulter.single('image'), authMiddleware, usersController.profile);
 
 // Editar usuario
 router.get("/profile/edit", authMiddleware, usersController.edit);

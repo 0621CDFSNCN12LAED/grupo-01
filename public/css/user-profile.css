@@ -1,0 +1,214 @@
+:root{
+    --main-color:rgb(140, 240, 140);
+    --white: rgb(255, 255, 255);
+    --grey: rgb(230, 222, 222);
+    --black:#13131a;
+    --bg:#010103;
+  }
+  
+*{
+    font-family: 'Montserrat';
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    transition: .2s linear;
+}
+       
+html{
+    font-size: 62.5%;
+    /* Snook trick so rem looks easier to know the amount
+    1rem = 10px  1,4rem = 14px */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+  
+.background{
+    background:url(../images/fondo-verde-mobile.jpg) no-repeat;
+    background-size: cover;
+}
+  
+main {
+    margin:3rem;
+}
+  
+.below-head-bar{
+    margin: 9.5rem 0 13rem;
+}
+
+.user-profile{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.user-profile .container{
+    background-color: var(--white);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    width: 90%;
+    max-width: 50rem;
+}
+
+.user-profile .image img{
+    border-radius: 100%;
+    width: 20rem;
+    height: 20rem;
+    border: 0.5rem solid #000046;
+}
+
+.user-profile .name{
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.user-profile .username{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.same-line{
+    display: flex;
+    align-items: center;
+}
+
+.user-profile .adress{
+    font-size: 1.2rem;
+}
+
+.user-profile .adress p{
+    margin-left: 0.5rem;
+}
+
+.user-profile .box{
+    background-color: rgb(234, 238, 240) ;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 70%;
+    margin-top: 2rem;
+}
+
+.user-profile .box p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.user-profile .location{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-profile .center{
+    border-left: 0.1rem solid var(--black);
+    border-right: 0.1rem solid var(--black);
+    padding: 0 1.5rem;
+}
+
+.user-profile .box .number{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.user-profile .bottom-container{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.user-profile .bottom-container .username{
+    font-size: 1.5rem;
+}
+
+.fa-user{
+    font-size: 3rem;
+    margin-right: 1.3rem;
+    margin-left: 0.2rem;
+}
+
+
+.user-profile .bottom-container .email{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+.fa-envelope{
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+
+
+
+.button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button .logout{
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 1rem;
+    margin: 0.4rem 0rem;
+    border: none;
+    border-radius: 4rem;
+
+    transition-duration: 0.3s;
+}
+
+.button .text{
+    font-size: 1.2rem;
+	font-weight: 700;
+	background-color: #3c93c5;
+	color: var(--white);
+}
+
+.logout:hover{
+    background-color: #22285f;
+    color:var(--white)
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.button-container .editar{
+    background-color: #68c8ff;
+    width: 80%;
+    border-radius: 1rem;
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+.button-container a{
+    font-size: 1.5rem;
+	font-weight: 700;
+    letter-spacing: 0.05rem;
+	color: var(--white);
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
+
+
+
+@media (min-width:1164px){
+    .background{
+        background:url(../images/fondo-verde-desktop.jpg) no-repeat;
+        background-position: center;
+    }
+}
