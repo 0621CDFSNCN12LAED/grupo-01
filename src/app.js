@@ -36,12 +36,17 @@ const indexRouter = require("./routes/index");
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/usersRoutes')
 const cartRouter = require('./routes/cartRoutes')
+// Ruta API
+const apiRoutes = require("./routes/apiRoutes")
 
 // Uso de rutas
 app.use("/", indexRouter);
 app.use("/products",productsRouter);
 app.use("/users", usersRouter);
 app.use("/carrito", cartRouter);
+// Uso de ruta API
+app.use("/api", apiRoutes)
+
 
 // Cargando el servidor
 app.listen(3000, () => console.log("Servidor esta corriendo"));
