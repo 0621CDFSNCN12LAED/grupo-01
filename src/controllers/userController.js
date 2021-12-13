@@ -11,7 +11,7 @@ const { validationResult } = require("express-validator");
 
 const controller = {
     register: (req, res) => {
-		res.render("tutuni-register");
+		res.render("tutuni-register", {user: req.session.userLogged});
 	},
     processRegister: async (req, res) => {
         const resultValidation = validationResult(req)
@@ -71,7 +71,7 @@ const controller = {
     
     },
     login: (req, res) => {
-		return res.render('tutuni-login');
+		return res.render('tutuni-login', {user: req.session.userLogged});
 	},
     processLogin: async (req,res) =>{
 

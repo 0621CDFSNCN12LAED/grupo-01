@@ -76,72 +76,6 @@ section{
 
 
 
-/* ---------- HEADER -TOP BAR- ---------  */
-
-.header{
-    background: var(--bg);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 2%;
-    border-bottom: .1rem solid rgba(255, 239, 239, 0.3);
-    position: fixed;
-    top:0; left: 0; right: 0;
-    z-index: 100;
-}
-
-.header .burguer{
-    width: 4rem;
-    height: 2.5rem;
-}
-    /* LA VERDAD LO TENGO POR TENER, NO HACE NADA */
-
-
-.header .logo img{
-    height: 6rem;
-}
-
-.header .navbar{
-    display: none;
-}
-
-.header .right-icons{
-    color:var(--white);
-    cursor: pointer;
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.8rem 0;
-}
-.header .right-icons-tablet{
-    display: none;
-}
-.header .right-icons-mobile{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 7rem;
-}
-
-.header a{
-    color:var(--white);
-    /* border: 1px solid white; */
-}
-.header .lupa{
-    width: 2.3rem;
-    height: 2.3rem;
-    margin: 0.5rem 0.2rem 0;
-    /* border: 1px solid white; */
-}
-.header .carrito{
-    width: 2.7rem;
-    height: 2.7rem;
-    margin-top: 0.5rem;
-    /* border: 1px solid white; */
-}
 
 .home{
     min-height: 70vh;
@@ -443,33 +377,6 @@ section{
         padding:2rem 3%;
     }
 
-    .header .navbar{
-        display: flex;
-    }
-
-    .header .navbar a{
-        margin: 0 1rem;
-        font-size: 1.8rem;
-        color:var(--white);
-    }
-
-    .header .navbar a:hover{
-        color:var(--main-color);
-        border-bottom: .1rem solid var(--main-color);
-        padding-bottom: .5rem;
-    }
-
-    .header .right-icons-tablet{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        width: 16rem;
-    }
-    .header .right-icons{
-        width: 25.2rem;
-    }
-
     .home{
         min-height: 100vh;
         border-radius: 0;
@@ -567,10 +474,6 @@ section{
     .fotos .content p{
         font-size: 1.5rem;;
         line-height: 1.8;
-    }
-
-    .footer {
-        display:none;
     }
 }
 

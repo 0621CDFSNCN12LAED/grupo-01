@@ -39,7 +39,8 @@ router.put("/profile/editado", configMulter.single('avatar'), editUserValidation
 router.get('/logout', usersController.logout);
 
 // Listado de usuarios
-router.get('/', adminValidator, usersController.index)
+router.get('/', adminValidator, usersController.index) // ESTA RUTA ESTA ROTA
+
 
 // Borrar usuarios (mas que nada para probar)
 router.delete("/delete/:id", usersController.destroy);

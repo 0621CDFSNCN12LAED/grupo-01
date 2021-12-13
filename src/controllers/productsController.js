@@ -14,17 +14,17 @@ const controller = {
         where: { deleted: false }
       }
     );
-    res.render("products", { products });
+    res.render("products", { products, user: req.session.userLogged});
   },
 
   detail: async (req, res) => {
     const product = await db.Products.findByPk(req.params.id, {include: ["category"]});
-    res.render('product-detail', { elegido: product });
+    res.render('product-detail', { elegido: product, user: req.session.userLogged });
   },
 
   create: async (req, res) => {
     const categories = await db.Categories.findAll();
-    res.render("createProduct", { categories });
+    res.render("createProduct", { categories, user: req.session.userLogged });
   },
 
   store: async (req, res) => {
@@ -71,7 +71,7 @@ const lastId = allProducts.length
     // const productEncontrado = appService.findById(req.params.id);
     const categories = await db.Categories.findAll();
     const productEncontrado = await db.Products.findOne({ where: { id: req.params.id}});
-    res.render("editProduct", { elegido : productEncontrado,  categories } );
+    res.render("editProduct", { elegido : productEncontrado,  categories, user: req.session.userLogged } );
   },
  
   update: async (req, res) => {

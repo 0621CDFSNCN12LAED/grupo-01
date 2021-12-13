@@ -65,12 +65,13 @@
 .header .right-icons-tablet{
     display: none;
 }
+
 .header .right-icons-mobile{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 7rem;
+    width: 13rem;
 }
 
 .header a{
@@ -91,7 +92,13 @@
 }
 
 
-
+.header .image img{
+    border-radius: 100%;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0 0 0 0.2rem white;
+    transform: scale(1.1)
+}
 
 
 .footer .gradient-footer {
@@ -171,10 +178,21 @@
         justify-content: space-between;
         align-items: center;
         width: 16rem;
+        margin-right: 1.5rem;
     }
     .header .right-icons{
         width: 25.2rem;
     }
+
+    .header .right-icons-mobile{
+        width: 14rem;
+    }
+
+    .header .carrito{
+        margin-right: 1rem;
+        /* border: 1px solid white; */
+    }
+    
 
     .footer {
         display:none;

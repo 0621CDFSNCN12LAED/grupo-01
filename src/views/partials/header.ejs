@@ -19,10 +19,10 @@
     </div>
      <!-- PROBANDO LA BARRA LATERAL DEL BURGUER -->
     <nav class="navbar">
-        <a href="/">Home</a>
+        <!-- <a href="/">Home</a>
         <a href="#recomendado">Recomendado</a>
         <a href="#categorias">Categorias</a>
-        <a href="#fotos">Fotos</a>
+        <a href="#fotos">Fotos</a> -->
     </nav>
 
     <div class="right-icons">
@@ -35,6 +35,17 @@
         <div class="right-icons-mobile">
             <a href="/users/profile/likes/" class="fas fa-heart"></a>
             <a href="/carrito"><img src="../../../images/carrito.svg" alt="carrito" class="carrito"></a>
+            <div class="image">
+                <% if (locals.userLogged) { %> 
+                    <a href="/users/profile">
+                        <img src="/../images/users/<%= user.image %>" alt="imagen"/>
+                    </a>
+                    <% } else {%>
+                        <a href="/users/login">
+                            <img src="/../images/users/sin-foto-de-perfil.png" alt="imagen"/>
+                        </a>
+                    <% } %>
+            </div>
         </div>
     </div>
 </header>

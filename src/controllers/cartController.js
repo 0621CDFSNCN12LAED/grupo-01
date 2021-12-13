@@ -10,12 +10,12 @@ const controller = {
         if (e) {
         const cart = await db.Carts.findByPk(e.id,{ include: ["products"]} )
         const suma = [0]
-        res.render("carrito", { cart, e })
+        res.render("carrito", { cart, e , user: req.session.userLogged})
 
 } else {
     // res.send("NO TENES CARRITO")
     const cart = undefined
-    res.render("carrito", { cart, e })
+    res.render("carrito", { cart, e, user: req.session.userLogged })
 }
     },
     add: async (req, res) => {

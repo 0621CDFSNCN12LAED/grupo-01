@@ -12,7 +12,9 @@ router.get("/tutuni-login", mainController.login);
 router.get("/tutuni-register", mainController.register);
 //router.get("/product-detail", mainController.productDetail);
 
-
+//ACA HAY UN ERROR DONDE DOS RUTAS LLEVAN A LA MISMA PÁGINA
+// "HABRIA QUE QUITAR ESTAS DE RECUPERAR TUTUNI-LOGIN- REGISTER"
+// YA QUE ESTAS YA ESTAN EN LAS RUTAS DE USERS
 
 
 
