@@ -10,13 +10,15 @@ module.exports = {
   },
   recuperar: (req, res) => {
     res.render("recuperar", { title: "Recuperar", user: req.session.userLogged });
-  },
-  login: (req, res) => {
-    res.render("tutuni-login", { title: "Login" , user: req.session.userLogged});
-  },
-  register: (req, res) => {
-    res.render("tutuni-register", { title: "Register", user: req.session.userLogged });
-  },
+  }
+  ,
+  // login: (req, res) => {
+  //   res.render("tutuni-login", { title: "Login" , user: req.session.userLogged});
+  // },
+  // register: (req, res) => {
+  //   res.render("tutuni-register", { title: "Register", user: req.session.userLogged });
+  // },
+
   //productDetail: (req, res) => {
   //  res.render("product-detail");
   //},

@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 const db = require("../../database/models/index");
-const imageDefault =  "sinImagenUsuario.png";
+const imageDefault =  "sin-foto-de-perfil.png";
 const bcryptjs = require("bcryptjs");
 
 const userService = require("../services/userService");
@@ -63,7 +63,7 @@ const controller = {
             deleted : Number(0),
             rolesId : 1
         })
-        res.redirect("/tutuni-login")
+        res.redirect("/users/login")
         } else {
             res.send("Problemas")
         }
@@ -173,7 +173,8 @@ const controller = {
         await db.Users.destroy({
             where: {id: req.params.id}
         })
-        res.redirect('/users')
+        
+        res.redirect('/')
     },
 
     likes: async (req, res) => {

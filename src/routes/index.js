@@ -8,8 +8,8 @@ router.get("/", mainController.home);
 router.get("/buscar", mainController.buscar);
 // router.get("/carrito", mainController.carrito);
 router.get("/recuperar", mainController.recuperar);
-router.get("/tutuni-login", mainController.login);
-router.get("/tutuni-register", mainController.register);
+// router.get("/tutuni-login", mainController.login);
+// router.get("/tutuni-register", mainController.register);
 //router.get("/product-detail", mainController.productDetail);
 
 //ACA HAY UN ERROR DONDE DOS RUTAS LLEVAN A LA MISMA PÁGINA
