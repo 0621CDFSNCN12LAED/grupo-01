@@ -233,7 +233,6 @@ después ver y corregir */
 
 .add-buy:hover{
     background-color: #22285f;
-    color:var(--white)
 }
 
 .info-title{
@@ -268,4 +267,11 @@ después ver y corregir */
 }
 .favorites:hover .heart{
     color: red;
+}
+
+
+@media (min-width:1164px){
+    .below-head-bar{
+        margin: 9.5rem 25rem 13rem;
+    }
 }
