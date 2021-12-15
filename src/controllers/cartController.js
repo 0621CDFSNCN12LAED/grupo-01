@@ -22,15 +22,17 @@ const controller = {
         console.log("estas aca")
         const cartsUser = await db.Carts.findAll({where : {userId: req.session.userLogged.id, status: "in-p"}})
         const biggestId = await db.Cart_product.max("id")
+        const biggestIdCart = await db.Carts.max("id")
         console.log(cartsUser)
 
         if (!cartsUser[0]) {
+
             await db.Carts.create({
-                id: biggestId + 1,
+                id: biggestIdCart + 1,
                 status: "in-p",
                 userId: req.session.userLogged.id
             }) 
-            console.log
+            
 
             const selectedProduct = await db.Products.findByPk(req.params.id)
             const cartsUser = await db.Carts.findAll({where : {userId: req.session.userLogged.id, status: "in-p"}})
@@ -75,6 +77,11 @@ const controller = {
 
     shop: async (req, res) => {
 
+        const cartsUser = await db.Carts.findAll({where : {userId: req.session.userLogged.id, status: "in-p"}})
+        console.log(cartsUser)
+
+        if (cartsUser != null) {
+
         await db.Carts.update({
             status: "bought"
         }, {
@@ -82,6 +89,7 @@ const controller = {
                 userId : req.session.userLogged.id
             }
         })
+    }
 
         res.redirect("/carrito")
     }

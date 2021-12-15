@@ -129,6 +129,7 @@ const controller = {
         console.log("aparte")
         console.log(oldData)
         if (correctPassword && (resultValidation.error == null)) {
+            console.log(req.body)
             
     await db.Users.update({
         image : req.file ? req.file.filename : userFound.image,
