@@ -112,7 +112,11 @@ const controller = {
     },
 
     profile: async (req, res) => {
-        res.render('user-detail', { user: req.session.userLogged })
+        // res.render('user-detail', { user: req.session.userLogged })
+
+        const userFound = await db.Users.findOne({ where: { id: req.session.userLogged.id}});
+        res.render('user-detail', { user: userFound })
+        
     },
 
     edit: (req, res) => {
