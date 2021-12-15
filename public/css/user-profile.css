@@ -64,6 +64,8 @@ main {
     width: 20rem;
     height: 20rem;
     border: 0.5rem solid #000046;
+    object-fit: cover;
+
 }
 
 .user-profile .name{
