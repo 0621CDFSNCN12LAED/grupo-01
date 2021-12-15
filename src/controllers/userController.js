@@ -175,12 +175,23 @@ const controller = {
     destroy: async (req, res) => {
         res.clearCookie('userEmail')
         req.session.destroy()
-        await db.Users.destroy({
-            where: {id: req.params.id}
-        })
+    //     await db.Users.destroy({
+    //         where: {id: req.params.id}
+    //     })
         
-        res.redirect('/')
-    },
+    //     res.redirect('/')
+    // },
+    
+    await db.Users.update({
+        deleted: true
+    }, {
+        where: {
+            id: req.params.id
+        }
+    })
+    
+    res.redirect('/')
+},
 
     likes: async (req, res) => {
         const user = await db.Users.findByPk( req.session.userLogged.id, {include: ["products"]})
