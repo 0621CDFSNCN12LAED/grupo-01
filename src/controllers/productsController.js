@@ -33,11 +33,12 @@ const controller = {
     const categories = await db.Categories.findAll();
 
     if (resultValidation.errors.length > 0) {
-      res.render("createProduct", {
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-          categories
-      })
+      res.render('createProduct', { 
+        errors: resultValidation.mapped(), 
+        oldData: req.body,
+        categories,
+        user: req.session.userLogged 
+       });
   }
     
 

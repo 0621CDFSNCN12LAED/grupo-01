@@ -109,6 +109,26 @@ html{
     height: 50%;
 }
 
+.product-errors-location{
+    display: flex;
+    justify-content: center;
+}
+
+.product-errors{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+}
+.product-errors .alert{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+.product-errors .m-l-3{
+    margin-left: 3rem;
+}
+
 .title{
    text-align: center;
    display:flex;

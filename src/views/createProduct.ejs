@@ -19,8 +19,15 @@
                     id="name"
                     name="name"
                     placeholder="Ingresar Título"
-                    required
                 >
+            </div>
+            <div class="product-errors-location">
+                <div class="product-errors">
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="alert"><i class="fas fa-exclamation-triangle"></i></i>  Porfavor corregir esto antes de continuar  <i class="fas fa-exclamation-triangle"></i></p>
+                        <%= errors.name.msg %>
+                    <% } %> 
+                </div>
             </div>
             <div>
                 <label for="image" class="create-letter"></label>
@@ -61,6 +68,31 @@
                     accept="image/jpeg,image/png"
                  >      
             </div>
+            <div class="product-errors-location">
+                <div class="product-errors">
+                    <% if (locals.errors) { %>
+                    <p class="alert"><i class="fas fa-exclamation-triangle"></i></i>  Porfavor corregir esto antes de continuar  <i class="fas fa-exclamation-triangle"></i></p>
+                    <% } %>
+                    <div class="m-l-3"> 
+                        <% if (locals.errors && errors.category) { %>
+                            <p><%= errors.category.msg %></p>
+                        <% } %>
+                        <% if (locals.errors && errors.stock) { %>
+                            <p><%= errors.stock.msg %></p>
+                        <% } %>
+                        <% if (locals.errors && errors.price) { %>
+                            <p><%= errors.price.msg %></p>
+                        <% } %>
+                        <% if (locals.errors && errors.discount) { %>
+                            <p><%= errors.discount.msg %></p>
+                        <% } %>
+                        <% if (locals.errors && errors.shipping) { %>
+                            <p><%= errors.shipping.msg %></p>
+                        <% } %>  
+                    </div>
+                </div>
+            </div>    
+    
             <div class="blocks-margin">
                 <article class="container">
                     <div class="image-block categoria"></div>
@@ -89,7 +121,6 @@
                                     id="stock"
                                     name="stock"
                                     placeholder="???"
-                                    required
                                     />
                                 <p class="block-letter-extras2"> unidad</p>
                             </div>
@@ -127,7 +158,6 @@
                                     id="price"
                                     name="price"
                                     placeholder="???"
-                                    required
                                 />
                             </div>
                         </div>
@@ -145,7 +175,6 @@
                                         id="discount"
                                         name="discount"
                                         placeholder="???"
-                                        required
                                     />
                                     <p class="block-letter-extras2"> %OFF</p>
                                 </div>
@@ -214,14 +243,19 @@
             <div class="description">
                 <label for="description" class="create-letter white">Descripción</label>
                 <div class="position-area">
-                    <% if (locals.errors && errors.description) { %>
-                        <%= errors.description.msg %>
-                        <% } %> 
                     <textarea
                         name="description"
                         id="description"
                         class="description-area"
                     ></textarea>
+                </div>
+            </div>
+            <div class="product-errors-location">
+                <div class="product-errors">
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="alert"><i class="fas fa-exclamation-triangle"></i></i>  Porfavor corregir esto antes de continuar  <i class="fas fa-exclamation-triangle"></i></p>
+                        <%= errors.description.msg %>
+                    <% } %> 
                 </div>
             </div>
             <div class="guardar-centrado">
