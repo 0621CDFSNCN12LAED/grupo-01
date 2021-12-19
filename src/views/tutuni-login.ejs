@@ -4,6 +4,7 @@
     <%- include ("partials/head.ejs") %>
         <!-- <link rel="stylesheet" href="/css/tutuni-inicio.registro.css" /> -->
         <link rel="stylesheet" href="/css/login.css" />
+        <script defer src="/js/loginValidation.js"></script>
     </head>
 
     <body class="background">
@@ -58,6 +59,10 @@
                                 <p class="remember-text"> Recordar usuario </p>       
                                 <input  type="checkbox" name="remember_user">
                             </div>
+
+                            <ul id="errors" class="hidden">
+                            </ul>
+
                             <div class="flex-login-forgot">
                                 <button class="button" type="submit">Ingresar</button>
                                 <a class="remember-mini-text" href="/Recuperar">¿Has olvidado tu contraseña?</a>

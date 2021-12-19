@@ -153,3 +153,7 @@ button:hover {
         font-size: 70%;
     }
 }
+
+.hidden {
+    display: none
+}

@@ -137,3 +137,7 @@ button:hover {
         background-position: center;
     }
 }
+
+.hidden {
+    display: none
+}
