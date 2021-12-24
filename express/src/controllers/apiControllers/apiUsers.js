@@ -21,9 +21,15 @@ const controller = {
              }
          })
 
-        res.status(200).json({
-            count: users.length,
-            users
+        res.json({
+            meta:{
+                status: 200,
+                count: users.length,
+                url: "http://localhost:3000/api/users/",
+            },
+            data:{
+                users
+            }
         })
     },
 
@@ -51,15 +57,12 @@ const controller = {
              res.json({
                  Problema: "No se encontro el usuario",
                  meta : {
-                     status: 404
-                 }
+                     status: 404,
+                     url: "http://localhost:3000/api/users/" + req.params.id,
+                 },
+                 data:  `No se encontró el usuario de id: ${req.params.id}`,
              })
          }
-
-
-
-
-         
 
     }
 }

@@ -23,9 +23,14 @@ const controller = {
             }
          })
         res.json({
-            count: products.length,
-            countByCategory, 
-            products
+            meta:{
+                status: 200,
+                count: products.length,
+                countByCategory, 
+            },
+            data:{
+                products         
+            }
         })
     },
 
@@ -43,8 +48,10 @@ const controller = {
             res.json({
                 Problema: "No se encontro el producto",
                 meta : {
-                    status: 404
-                }
+                    status: 404,
+                    url: "http://localhost:3000/api/products/" + req.params.id,
+                },
+                data: `No se encontró el producto con id: ${req.params.id}`,
             })
         }
          
