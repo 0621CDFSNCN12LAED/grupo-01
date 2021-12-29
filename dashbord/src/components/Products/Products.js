@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
-import ContentProducts from "./ContentProducts.js";
+import ContentProducts from "./ContentProducts";
 import "./Products.css";
 
 function Products() {
