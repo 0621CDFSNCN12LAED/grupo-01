@@ -27,7 +27,8 @@ export default class ContentProducts extends Component {
                             <div className="card-body">{product.name}
                             <br></br> Descripcion: {product.description}
                             <br></br> Categoria: {product.category.categoryName}
-                            <br></br> <img src={`http://localhost:3001/images/productos/${this.state.product.image}`} alt="ImageProduct"/>
+                            {/* <br></br> <img src={`http://localhost:3001/images/productos/${this.state.product.image}`} alt="ImageProduct"/> */}
+                            {/* no me sale :( */}
                             <br></br> Detalle ( no se como hacer el link |°-°| ) </div>
                         </div>
                     </div>
