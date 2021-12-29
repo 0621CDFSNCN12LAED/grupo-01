@@ -26,13 +26,13 @@
 
 ### Git Hub de integrantes
 
-<h5> **Matias Pietro** </h5>
+**Matias Pietro**
 https://github.com/matias-prieto
 
-<h5> **Federico Cristaldo** </h5>
+**Federico Cristaldo**
 https://github.com/FedericoMC
 
-<h5> **Salvador Carou** </h5>
+**Salvador Carou**
 https://github.com/salvacarou
 
 
