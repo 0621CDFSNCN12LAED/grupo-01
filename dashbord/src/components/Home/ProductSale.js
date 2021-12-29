@@ -23,7 +23,7 @@ class ProductSale extends Component {
             </div>
             <div className="card-body">
                 <div className="text-center">
-                    <h2>{this.state.lastProduct.title}</h2>
+                    <h2>{this.state.lastProduct.name}</h2>
                     <img className="img-fluid px-3 px-sm-4 mt-3 mb-4 imageProductHome" src={`http://localhost:3001/images/productos/${this.state.lastProduct.image}`} alt="ImageProduct"/>
                 </div>
                 <p>{this.state.lastProduct.description}</p>
