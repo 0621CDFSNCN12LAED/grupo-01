@@ -2,10 +2,9 @@ import Square from './Square';
 import React, { Component } from "react";
 import './Home.css';
 
-const productsURL = "http://localhost:3001/api/products";
-const usersURL = "http://localhost:3001/api/users";
+const productsURL = "/api/products";
+const usersURL = "/api/users";
 
-const count = [];
 
 class ContentRowProduct extends Component {
     constructor(props) {
@@ -13,7 +12,7 @@ class ContentRowProduct extends Component {
         this.state = {};
     }
     render(){
-        if (!this.state.count) {
+        if (!this.state.totalProducts || !this.state.totalCategories || !this.state.totalUsers) {
             return <div>Cargando</div>;
         }
         return (
@@ -22,19 +21,19 @@ class ContentRowProduct extends Component {
                     title="Productos en la Base de Datos"
                     icon="fa-shopping-cart"
                     color="primary"
-                    value={this.state.count[0]}
+                    value={this.state.totalProducts}
                 />
                 <Square
                     title="Categorias en la Base de Datos"
                     icon="fa-tags"
                     color="success"
-                    value={6}
+                    value={this.state.totalCategories}
                 />
                 <Square
                     title="Usuarios en la Base de Datos"
                     icon="fa-user"
                     color="warning"
-                    value={this.state.count[1]}
+                    value={this.state.totalUsers}
                 />
             </div>
         );
@@ -43,24 +42,26 @@ class ContentRowProduct extends Component {
         console.log("el componente se monto");
         this.fetchAll();
     }
+
     async fetchAll() {
         const productsNotJson = await fetch(productsURL);
-        const products = await productsNotJson.json();
-        // console.log(products)
-        count.push(products.meta.count);
-        
-        
+        const productsJson = await productsNotJson.json();
+        const totalProducts = productsJson.meta.count
+        const totalCategories = productsJson.meta.categoriesCount
+
         const usersNotJson = await fetch(usersURL);
-        const users = await usersNotJson.json();
-        count.push(users.meta.count);
-   
-        this.setState({ count: count });
+        const usersJson = await usersNotJson.json();
+        const totalUsers = usersJson.meta.count
+
+
+
+        this.setState({ totalProducts: totalProducts, totalCategories: totalCategories, totalUsers: totalUsers });
+
     }
 }
 
 export default ContentRowProduct;
 
-// ERROR: encabezado CORS ‘Access-Control-Allow-Origin’ faltante). Código de estado: 200.
 
 
 

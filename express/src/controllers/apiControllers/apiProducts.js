@@ -3,7 +3,7 @@ const db = require("../../../database/models")
 
 const controller = {
     list: async (req, res) => {
-        const productsList = await db.Products.findAll({include: ["category"]});
+        const productsList = await db.Products.findAll({include: "category"});
         const category = await db.Categories.findAll({include: ["products"]});
         const products = productsList.map((product) => { 
             return { 
@@ -26,10 +26,11 @@ const controller = {
             meta:{
                 status: 200,
                 count: products.length,
-                countByCategory, 
+                categoriesCount: category.length,
+                countByCategory,
             },
             data:{
-                products         
+                products    
             }
         })
     },

@@ -36,8 +36,8 @@ export default class BranchList extends Component {
                 {this.state.categories.map((category) =>
                     <div className="col-lg-6 mb-4">
                         <div className="card bg-dark text-white shadow">
-                            <div className="card-body">{category.name}</div>
-                            <div className="card-body">Cantidad de productos : {category.total}</div>
+                            <div className="card-body">{category.name} <br></br> Cantidad de productos : {category.total}</div>
+                            {/* <div className="card-body">Cantidad de productos : {category.total}</div> */}
                         </div>
                     </div>
                 )}
