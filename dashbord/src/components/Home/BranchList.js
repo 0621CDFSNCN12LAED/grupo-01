@@ -49,20 +49,19 @@ export default class BranchList extends Component {
   );
 }
 
-componentDidMount() {
-    console.log("CD-Mount");
-    this.fetchCategories();
-}
+    componentDidMount() {
+        console.log("CD-Mount");
+        this.fetchCategories();
+    }
 
-async fetchCategories() {
-    const result = await fetch(productsURL);
-    const response = await result.json()
-    const categories = response.meta.countByCategory
-
-    this.setState({ categories:categories })
-    console.log(this.setState.categories)
-    console.log(categories)
-}
+    async fetchCategories() {
+        const result = await fetch(productsURL);
+        const response = await result.json()
+        const categories = response.meta.countByCategory
+        
+        this.setState({ categories:categories })
+        console.log(categories)
+    }
 }
 
 

@@ -11,7 +11,8 @@ const controller = {
                 name: product.name,
                 description: product.description,
                 category: product.category,
-                detail: "http://localhost:3001/api/products/" + product.id
+                detail: "http://localhost:3001/api/products/" + product.id,
+                image: product.image
             }
         
              })
